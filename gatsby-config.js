@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
     title: "rustom.dev",
+    siteUrl: "https://rustom.dev"
   },
+  // pathPrefix: "/gatsby-fresh",
   plugins: [
     {
       resolve: "gatsby-plugin-google-analytics",
