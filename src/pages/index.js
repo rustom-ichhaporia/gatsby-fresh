@@ -166,23 +166,40 @@
 
 import React from "react"
 import styled from "styled-components"
+import GlobalStyle from '../globalStyles';
+import  {FaLinkedinIn, FaGithubAlt, FaInstagram, FaTwitter} from "@meronex/icons/fa";
+import {SiGmail, SiGooglescholar} from "@meronex/icons/si";
 
 const Container = styled.div`
-  display: flex;
+  background-color: #04192e;
+  color: #ffffff;
+  height: 100vh;
+  margin: 0px;
+
   align-items: center;
   justify-content: center;
   text-align: center;
   font-family: IBM Plex Mono;
   font-size: 8vw;
   font-weight: 200;
-  line-height: 20vw;
+  line-height: 10vw;
   letter-spacing: 0.2em;
+  overflow: hidden;
 `
 
 export default function UsersList() {
   return (
+    <>
+  <GlobalStyle />
     <Container>
       <p>RUSTOM<br/>ICHHAPORIA</p>
+      <SiGmail />
+      <FaLinkedinIn />
+      <FaGithubAlt />
+      <SiGooglescholar />
+      <FaTwitter />
+      <FaInstagram />
     </Container>
+    </>
   )
 }
