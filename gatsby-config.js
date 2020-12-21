@@ -2,7 +2,15 @@ module.exports = {
   siteMetadata: {
     title: "Rustom Ichhaporia's Home on the Web",
     siteUrl: "https://rustom.dev",
-    description: "The third iteration of Rustom Ichhaporia's personal website."
+    description: "The third iteration of Rustom Ichhaporia's personal website.",
+    socialLinks: {
+      email: "me@rustom.dev",
+      linkedin: "rustom-ichhaporia",
+      github: "rustom-ichhaporia", 
+      twitter: "cantspellrustom", 
+      instagram: "rustom.om", 
+      scholar: "fhRRnW8AAAAJ"
+    }
   },
   plugins: [
     {
