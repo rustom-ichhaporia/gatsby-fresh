@@ -3,6 +3,7 @@ import styled from "styled-components"
 import GlobalStyle from '../globalStyles';
 import Icon from '../icons'
 import { siteMetadata } from "../../gatsby-config";
+import portrait from "../../images/portrait.png";
 
 const Container = styled.div`
   background-color: var(--dark-grey);
@@ -15,13 +16,22 @@ const Container = styled.div`
   text-align: center;
   font-size: 6vw;
   font-weight: lighter;
-  line-height: 10vw;
+  line-height: 8avw;
   letter-spacing: 0.2em;
-  overflow: hidden;
+  // overflow: hidden;
 
   .buttons {
     font-size: 3vw;
     padding-right: 2vw;
+  }
+
+  p {
+    margin: 0px;
+  }
+
+  img {
+    margin-top: 10vh;
+    width: 20vw;
   }
 `
 
@@ -33,9 +43,6 @@ const Cursor = styled.div`
 
 `;
 
-{/* <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script> */}
-
-
 document.addEventListener("mousemove", function(event) {
   const x = event.pageX - 10;
   const y = event.pageY - 10;
@@ -44,75 +51,33 @@ document.addEventListener("mousemove", function(event) {
   cursor.style.top = y + "px";
 });
 
-// $('div').on("mouseover", function(){
-//   $('#cursor').css({'transform': 'scale(2)'});
-// });
-
-// $('div').on("mouseleave", function(){
-//   $('#cursor').css({'transform': 'scale(1)'});
-// });
-
 export default function MainPage() {
-  // const updateProperties = (elem, state) => {
-  //   elem.style.setProperty('--x', `${state.x}px`)
-  //   elem.style.setProperty('--y', `${state.y}px`)
-  //   elem.style.setProperty('--width', `${state.width}px`)
-  //   elem.style.setProperty('--height', `${state.height}px`)
-  //   elem.style.setProperty('--radius', state.radius)
-  //   elem.style.setProperty('--scale', state.scale)
-  // }
+
+
+  // const $ = window.$;
+
+
+{/* <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script> */}
+
   
-  // document.querySelectorAll('.cursor').forEach(cursor => {
-  //   let onElement
+  // $('div').on("mouseover", function(){
+  //   $('#cursor').css({'transform': 'scale(2)'});
+  // });
   
-  //   const createState = e => {
-  //     const defaultState = {
-  //       x: e.clientX,
-  //       y: e.clientY,
-  //       width: 40,
-  //       height: 40,
-  //       radius: '50%'
-  //     }
-  
-  //     const computedState = {}
-  
-  //     if (onElement != null) {
-  //       const { top, left, width, height } = onElement.getBoundingClientRect()
-  //       const radius = window.getComputedStyle(onElement).borderTopLeftRadius
-  
-  //       computedState.x = left + width / 2
-  //       computedState.y = top + height / 2
-  //       computedState.width = width
-  //       computedState.height = height
-  //       computedState.radius = radius
-  //     }
-  
-  //     return {
-  //       ...defaultState,
-  //       ...computedState
-  //     }
-  //   }
-  
-  //   document.addEventListener('mousemove', e => {
-  //     const state = createState(e)
-  //     updateProperties(cursor, state)
-  //   })
-  
-  //   document.querySelectorAll('a, button').forEach(elem => {
-  //     elem.addEventListener('mouseenter', () => (onElement = elem))
-  //     elem.addEventListener('mouseleave', () => (onElement = undefined))
-  //   })
-  // })
+  // $('div').on("mouseleave", function(){
+  //   $('#cursor').css({'transform': 'scale(1)'});
+  // });
   
   return (
     <>
       <GlobalStyle />
-      {/* <div class="cursor"></div> */}
       <div id="cursor"></div>
 
       
 
       <Container>
+
+        <img src={portrait} alt="Portrait" />
 
         <p>RUSTOM<br />ICHHAPORIA</p>
 
