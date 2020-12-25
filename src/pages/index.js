@@ -1,9 +1,9 @@
-import React from "react"
+import React, {useEffect} from "react"
 import styled from "styled-components"
 import GlobalStyle from '../globalStyles';
 import Icon from '../icons'
 import { siteMetadata } from "../../gatsby-config";
-import portrait from "../../images/portrait.svg";
+import portrait from "../images/portrait.svg";
 
 const Container = styled.div`
   background-color: var(--dark-grey);
@@ -64,13 +64,7 @@ const Cursor = styled.div`
 
 `;
 
-document.addEventListener("mousemove", function (event) {
-  const x = event.pageX - 10;
-  const y = event.pageY - 10;
-  const cursor = document.querySelector("#cursor");
-  cursor.style.left = x + "px";
-  cursor.style.top = y + "px";
-});
+
 
 export default function MainPage() {
 
@@ -88,6 +82,19 @@ export default function MainPage() {
   // $('div').on("mouseleave", function(){
   //   $('#cursor').css({'transform': 'scale(1)'});
   // });
+
+  useEffect(() => {
+    document.addEventListener("mousemove", function (event) {
+      const x = event.pageX - 10;
+      const y = event.pageY - 10;
+      const cursor = document.querySelector("#cursor");
+      cursor.style.left = x + "px";
+      cursor.style.top = y + "px";
+    });
+
+  }, []);
+
+
 
   return (
     <>
