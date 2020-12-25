@@ -3,12 +3,13 @@ import styled from "styled-components"
 import GlobalStyle from '../globalStyles';
 import Icon from '../icons'
 import { siteMetadata } from "../../gatsby-config";
-import portrait from "../../images/portrait.png";
+import portrait from "../../images/portrait.svg";
 
 const Container = styled.div`
   background-color: var(--dark-grey);
   color: var(--white);
   height: 100vh;
+  width: 100vw;
   margin: 0px;
 
   align-items: center;
@@ -30,20 +31,40 @@ const Container = styled.div`
   }
 
   img {
-    margin-top: 10vh;
-    width: 20vw;
+    // margin-top: 10vh;
+    width: 25vw;
+  }
+
+  // display: flex;
+  // flex-direction: row;
+  // flex-basis: 100%;
+  .left-side, .right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    float: left;
+  }
+
+  .left-side {
+    width: 60%;
+
+  }
+
+  .right-side {
+    width: 40%;
   }
 `
 
-const linkBox = styled(Container)`
-  // font-size: 4vw; 
+const linkBox = styled.div`
 `
 
 const Cursor = styled.div`
 
 `;
 
-document.addEventListener("mousemove", function(event) {
+document.addEventListener("mousemove", function (event) {
   const x = event.pageX - 10;
   const y = event.pageY - 10;
   const cursor = document.querySelector("#cursor");
@@ -57,40 +78,48 @@ export default function MainPage() {
   // const $ = window.$;
 
 
-{/* <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script> */}
+  {/* <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script> */ }
 
-  
+
   // $('div').on("mouseover", function(){
   //   $('#cursor').css({'transform': 'scale(2)'});
   // });
-  
+
   // $('div').on("mouseleave", function(){
   //   $('#cursor').css({'transform': 'scale(1)'});
   // });
-  
+
   return (
     <>
       <GlobalStyle />
       <div id="cursor"></div>
 
-      
+
 
       <Container>
 
-        <img src={portrait} alt="Portrait" />
 
-        <p>RUSTOM<br />ICHHAPORIA</p>
+        <div class="left-side">
 
-        <linkBox>
+          <p>RUSTOM<br />ICHHAPORIA</p>
 
-          {siteMetadata.socialMedia &&
-            siteMetadata.socialMedia.map(({ url, name }, i) => (
-              <a href={url} aria-label={name} target="_blank" rel="noreferrer" className="buttons">
-                <Icon name={name} />
-              </a>
-            ))}
+          <linkBox>
+            {siteMetadata.socialMedia &&
+              siteMetadata.socialMedia.map(({ url, name }, i) => (
+                <a href={url} aria-label={name} target="_blank" rel="noreferrer" className="buttons">
+                  <Icon name={name} />
+                </a>
+              ))}
+          </linkBox>
 
-        </linkBox>
+
+
+        </div>
+
+
+        <div class="right-side">
+          <img src={portrait} alt="Portrait" />
+        </div>
 
       </Container>
     </>
