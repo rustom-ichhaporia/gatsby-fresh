@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaEnvelope, FaLinkedinIn, FaGithubAlt, FaInstagram, FaTwitter } from "@meronex/icons/fa";
+import { FaEnvelope, FaLinkedinIn, FaGithubAlt, FaInstagram, FaTwitter, FaMediumM } from "@meronex/icons/fa";
 import { SiGooglescholar } from "@meronex/icons/si";
 
 const Icon = ({ name }) => {
@@ -12,6 +12,8 @@ const Icon = ({ name }) => {
             return <FaGithubAlt />;
         case 'Scholar':
             return <SiGooglescholar />;
+        case 'Medium': 
+            return <FaMediumM />;
         case 'Twitter':
             return <FaTwitter />;
         case 'Instagram':

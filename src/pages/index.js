@@ -3,7 +3,7 @@ import styled from "styled-components"
 import GlobalStyle from '../globalStyles';
 import Icon from '../icons'
 import { siteMetadata } from "../../gatsby-config";
-import portrait from "../images/portrait.svg";
+import portrait from "../images/portrait.png";
 
 const Container = styled.div`
   background-color: var(--dark-grey);
@@ -16,7 +16,7 @@ const Container = styled.div`
   justify-content: center;
   text-align: center;
   font-size: 6vw;
-  font-weight: lighter;
+  font-weight: 100;
   line-height: 8avw;
   letter-spacing: 0.2em;
   // overflow: hidden;
