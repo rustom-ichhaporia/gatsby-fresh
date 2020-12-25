@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/gatsby-fresh",
   siteMetadata: {
     title: "Rustom Ichhaporia's Home on the Web",
     siteUrl: "https://rustom.dev",
@@ -15,6 +16,14 @@ module.exports = {
       {
         name: 'LinkedIn',
         url: 'https://www.linkedin.com/in/rustom-ichhaporia',
+      },      
+      {
+        name: 'Scholar',
+        url: 'https://scholar.google.com/citations?user=fhRRnW8AAAAJ'
+      },
+      {
+        name: 'Medium', 
+        url: 'https://rustom-ichhaporia.medium.com'
       },
       {
         name: 'Instagram',
@@ -24,10 +33,7 @@ module.exports = {
         name: 'Twitter',
         url: 'https://twitter.com/cantspellrustom',
       },
-      {
-        name: 'Scholar',
-        url: 'https://scholar.google.com/citations?user=fhRRnW8AAAAJ'
-      }
+
     ],
   },
   plugins: [
