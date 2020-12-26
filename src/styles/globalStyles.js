@@ -53,8 +53,7 @@ const GlobalStyle = createGlobalStyle`
     transition: transform .15s ease-in-out;
     z-index: 100;
   }
-
-
+  
   // // https://codepen.io/hbthen3rd/pen/ywxjWx
 `;
 
