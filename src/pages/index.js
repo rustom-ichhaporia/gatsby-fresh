@@ -1,12 +1,12 @@
 import React, {useEffect} from "react"
 import styled from "styled-components"
-import GlobalStyle from '../globalStyles';
-import Icon from '../icons'
+import GlobalStyle from '../styles/globalStyles';
+import Icon from '../components/icons'
 import { siteMetadata } from "../../gatsby-config";
 import portrait from "../images/portrait.png";
+import IndexPage from "../components/background.js"
 
 const Container = styled.div`
-  background-color: var(--dark-grey);
   color: var(--white);
   height: 100vh;
   width: 100vw;
@@ -20,10 +20,15 @@ const Container = styled.div`
   line-height: 8avw;
   letter-spacing: 0.2em;
   // overflow: hidden;
+  position: relative; 
+  z-index: 20;
+  pointer-events: none;
+
 
   .buttons {
     font-size: 3vw;
     padding-right: 2vw;
+    pointer-events: auto;
   }
 
   p {
@@ -31,13 +36,9 @@ const Container = styled.div`
   }
 
   img {
-    // margin-top: 10vh;
     width: 25vw;
   }
 
-  // display: flex;
-  // flex-direction: row;
-  // flex-basis: 100%;
   .left-side, .right-side {
     display: flex;
     flex-direction: column;
@@ -49,7 +50,6 @@ const Container = styled.div`
 
   .left-side {
     width: 60%;
-
   }
 
   .right-side {
@@ -59,11 +59,6 @@ const Container = styled.div`
 
 const linkBox = styled.div`
 `
-
-const Cursor = styled.div`
-
-`;
-
 
 
 export default function MainPage() {
@@ -101,6 +96,7 @@ export default function MainPage() {
       <GlobalStyle />
       <div id="cursor"></div>
 
+      <IndexPage />
 
 
       <Container>
