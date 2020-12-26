@@ -51,6 +51,7 @@ const GlobalStyle = createGlobalStyle`
     mix-blend-mode: difference;
     pointer-events: none;
     transition: transform .15s ease-in-out;
+    z-index: 100;
   }
 
 
