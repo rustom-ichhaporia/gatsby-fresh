@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import GlobalStyle from '../styles/globalStyles';
-import Icon from '../components/icons';
 import { siteMetadata } from '../../gatsby-config';
-import portrait from '../images/portrait.png';
+
+import GlobalStyle from '../styles/global-styles';
+import Icon from '../components/icons';
+import Portrait from '../images/portrait.png';
 import IndexPage from '../components/background.js';
 
 const Container = styled.div`
@@ -116,7 +117,7 @@ export default function MainPage() {
         </div>
 
         <div class="right-side">
-          <img src={portrait} alt="Portrait" />
+          <img src={Portrait} alt="Portrait" />
         </div>
       </Container>
     </>

@@ -5,7 +5,8 @@ const GlobalStyle = createGlobalStyle`
     --white: #cccccc;
     --peach: #ffa984;
     --dark-peach: #b86440;
-    --dark-grey: #1c1c1c;
+    --dark-grey: #151515;
+    --black: #000000;
   }
 
   html {
@@ -25,6 +26,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background: var(--dark-grey);
     font-family: Montserrat, IBM Plex Mono, Open-Sans, Helvetica, Sans-Serif;
+    color: var(--white);
 
     a {
       :link {
