@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { siteMetadata } from '../../gatsby-config';
 
-import GlobalStyle from '../styles/global-styles';
+import GlobalStyle from '../styles/global-style';
 import Icon from '../components/icons';
 import Portrait from '../images/portrait.png';
 import IndexPage from '../components/background.js';

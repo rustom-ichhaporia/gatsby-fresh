@@ -2,11 +2,14 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --white: #cccccc;
+    --white: #ffffff;
     --peach: #ffa984;
     --dark-peach: #b86440;
+    --light-grey: #cccccc;
+    --medium-grey: #888888;
     --dark-grey: #151515;
     --black: #000000;
+
   }
 
   html {
@@ -26,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background: var(--dark-grey);
     font-family: Montserrat, IBM Plex Mono, Open-Sans, Helvetica, Sans-Serif;
-    color: var(--white);
+    color: var(--light-grey);
 
     a {
       :link {
