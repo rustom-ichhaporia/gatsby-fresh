@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+import Obfuscate from 'react-obfuscate';
 
 import { siteMetadata } from '../../gatsby-config';
 import GlobalStyle from '@styles/global-style';
@@ -10,15 +11,26 @@ const PageStyle = styled.div`
   margin: auto;
   padding: 20px;
 
+  font-size: 30px;
+  line-height: 1.3em;
+
   * {
     font-weight: 200;
   }
 
-  font-size: 30px;
-
   p {
     // font-family: IBM Plex Mono;
     font-size: 25px;
+  }
+  #link-highlight {
+    background: #ffa984;
+    border-radius: 999px;
+    mix-blend-mode: difference;
+    position: absolute;
+    pointer-events: none;
+    transition: 0.15s ease;
+    height: 30px;
+    width: 30px;
   }
 `;
 
@@ -40,20 +52,46 @@ const Links = styled.div`
 `;
 
 export default function Page() {
+  // New cursor: https://codepen.io/markmead/pen/aXjerK
   useEffect(() => {
-    document.addEventListener('mousemove', function (event) {
-      const x = event.pageX - 10;
-      const y = event.pageY - 10;
-      const cursor = document.querySelector('#cursor');
-      cursor.style.left = x + 'px';
-      cursor.style.top = y + 'px';
-    });
+    const PAGE_LINKS = document.querySelectorAll('a');
+    const HIGHLIGHT = document.getElementById('link-highlight');
+    let isOnElement = false;
+
+    // move highlighter
+    const moveHighlighter = (e) => {
+      if (isOnElement) return false;
+      HIGHLIGHT.style.left = `${e.pageX - 10}px`;
+      HIGHLIGHT.style.top = `${e.pageY - 10}px`;
+    };
+    document.addEventListener('mousemove', moveHighlighter);
+
+    // apply styling over target
+    const highlightLink = (ele) => {
+      HIGHLIGHT.style.left = `${ele.offsetLeft - 12}px`;
+      HIGHLIGHT.style.top = `${ele.offsetTop - 6}px`;
+      HIGHLIGHT.style.width = `${ele.offsetWidth + 24}px`;
+      HIGHLIGHT.style.height = `${ele.offsetHeight + 12}px`;
+      isOnElement = true;
+    };
+    PAGE_LINKS.forEach((link) =>
+      link.addEventListener('mouseenter', highlightLink.bind(null, link, false))
+    );
+
+    // default styling off target
+    const unHighlightLink = () => {
+      HIGHLIGHT.style.width = '20px';
+      HIGHLIGHT.style.height = '20px';
+      isOnElement = false;
+    };
+    PAGE_LINKS.forEach((link) =>
+      link.addEventListener('mouseleave', unHighlightLink)
+    );
   }, []);
 
   return (
     <>
       <GlobalStyle />
-      <div id="cursor"></div>
 
       <PageStyle>
         <h1>Hello!</h1>
@@ -62,7 +100,7 @@ export default function Page() {
           <blockquote>
             My name is<span> rustom ichhaporia</span>.
             <br />
-            This is my Home on the Web.
+            Welcome to my Home on the Web.
           </blockquote>
         </SubHead>
 
@@ -90,9 +128,13 @@ export default function Page() {
 
         <Links>
           {siteMetadata.socialMedia &&
-            siteMetadata.socialMedia.map(({ url, name }, i) => (
+            siteMetadata.socialMedia.map(({ url, name }) => (
               <a
-                href={url}
+                href={
+                  name == 'Email'
+                    ? 'mailto:' + url + '?subject=Tell me something funny'
+                    : url
+                }
                 aria-label={name}
                 target="_blank"
                 rel="noreferrer"
@@ -102,6 +144,7 @@ export default function Page() {
               </a>
             ))}
         </Links>
+        <div id="link-highlight"></div>
       </PageStyle>
     </>
   );
