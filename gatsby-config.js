@@ -7,7 +7,7 @@ module.exports = {
     socialMedia: [
       {
         name: 'Email',
-        url: 'something at something',
+        url: 'rustom@rustom.dev',
       },
       {
         name: 'GitHub',

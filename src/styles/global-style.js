@@ -17,11 +17,6 @@ const GlobalStyle = createGlobalStyle`
     a:link {
       cursor: none;
     }
-    // https://codepen.io/g-norman/pen/oqMGyj
-    // cursor: url("data:image/svg+xml,%3Csvg height='6' width='6' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' fill='black' r='4'/%3E%3C/svg%3E") 3 3, auto;
-    // a:link {
-    //   cursor: url("data:image/svg+xml,%3Csvg height='6' width='6' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' fill='black' r='4'/%3E%3C/svg%3E") 3 3, auto;
-    // }
   }
 
   body {
@@ -47,19 +42,28 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
-  #cursor {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    mix-blend-mode: difference;
-    pointer-events: none;
-    transition: transform .15s ease-in-out;
-    z-index: 100;
-  }
-  
-  // // https://codepen.io/hbthen3rd/pen/ywxjWx
+  // Old cursor: https://codepen.io/g-norman/pen/oqMGyj
+  // #cursor {
+  //   position: absolute;
+  //   width: 20px;
+  //   height: 20px;
+  //   background: white;
+  //   border-radius: 50%;
+  //   mix-blend-mode: difference;
+  //   pointer-events: none;
+  //   transition: transform .15s ease-in-out;
+  //   z-index: 100;
+  // }
+  // useEffect(() => {
+  //   document.addEventListener('mousemove', function (event) {
+  //     const x = event.pageX - 10;
+  //     const y = event.pageY - 10;
+  //     const cursor = document.querySelector('#cursor');
+  //     cursor.style.left = x + 'px';
+  //     cursor.style.top = y + 'px';
+  //   });
+  // }, []);
+}
 `;
 
 export default GlobalStyle;
