@@ -1,26 +1,42 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
+
+import { siteMetadata } from '../../gatsby-config';
 import GlobalStyle from '@styles/global-style';
+import Icon from '@components/icons';
 
 const PageStyle = styled.div`
   max-width: 700px;
   margin: auto;
+  padding: 20px;
+
+  * {
+    font-weight: 200;
+  }
 
   font-size: 30px;
+
+  p {
+    // font-family: IBM Plex Mono;
+    font-size: 25px;
+  }
 `;
 
-const Head = styled.h1`
-  color: var(--light-grey);
-`;
-
-const SubHead = styled.p`
+const SubHead = styled.h4`
   color: var(--medium-grey);
   font-style: italic;
-  mark {
-    background-color: var(--peach);
+  span {
+    font-family: IBM Plex Mono;
+    color: var(--peach);
     font-style: normal;
-    font-weight: 900;
+    font-weight: 600;
   }
+`;
+
+const Links = styled.div`
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
 `;
 
 export default function Page() {
@@ -40,16 +56,52 @@ export default function Page() {
       <div id="cursor"></div>
 
       <PageStyle>
-        <Head>Hello!</Head>
+        <h1>Hello!</h1>
+
         <SubHead>
           <blockquote>
-            Welcome to <mark>Rustom Ichhaporia</mark>'s Home on the Web.
+            My name is<span> rustom ichhaporia</span>.
+            <br />
+            This is my Home on the Web.
           </blockquote>
         </SubHead>
-        <h1>Hello!</h1>
-        <h2>Hello</h2>
-        <h3>Hello</h3>
-        <p>Hello</p>
+
+        <p>
+          I'm a CS + statistics student at the University of Illinois,
+          Urbana-Champaign.
+        </p>
+
+        <p>
+          I work at the intersection of data science and, well, everything. I
+          believe leveraging the power of data of all sizes can have an impact
+          on any field, so I try my best to explore all the ways it can be used.
+        </p>
+
+        <p>
+          I'm currently studying at the University of Illinois at
+          Urbana-Champaign, working as an AI Research Intern at the{' '}
+          <a href="https://irisklabuiuc.wixsite.com/actsi/associates">
+            Illinois Risk Lab
+          </a>{' '}
+          where I facilitate the end-to-end data pipeline for the AI-Powered
+          Lifecycle Financial Planning research group.
+        </p>
+        <br />
+
+        <Links>
+          {siteMetadata.socialMedia &&
+            siteMetadata.socialMedia.map(({ url, name }, i) => (
+              <a
+                href={url}
+                aria-label={name}
+                target="_blank"
+                rel="noreferrer"
+                className="buttons"
+              >
+                <Icon name={name} />
+              </a>
+            ))}
+        </Links>
       </PageStyle>
     </>
   );

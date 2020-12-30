@@ -1,1 +1,2 @@
-import '@fontsource/montserrat/200.css';
+import '@fontsource/montserrat/latin.css';
+import '@fontsource/ibm-plex-mono';
