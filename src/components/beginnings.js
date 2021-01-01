@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { siteMetadata } from '../../gatsby-config';
 
 import GlobalStyle from '../styles/global-style';
-import Icon from '../components/icons';
+import Icon from './icons';
 import Portrait from '../images/portrait.png';
-import IndexPage from '../components/background.js';
+import IndexPage from './background.js';
 
 const Container = styled.div`
   color: var(--white);

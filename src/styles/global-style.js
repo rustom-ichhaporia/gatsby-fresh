@@ -3,13 +3,24 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   :root {
     --white: #ffffff;
+    --cream: #f0f0f0;
+    --red: #f04646;
+    --dark-red: #c72424;
     --peach: #ffa984;
     --dark-peach: #b86440;
-    --light-grey: #cccccc;
-    --medium-grey: #888888;
-    --dark-grey: #151515;
+    --red: #f04646;
+    --grey-4: #cccccc;
+    --grey-3: #888888;
+    --grey-2: #444444;
+    --grey-1: #151515;
     --black: #000000;
 
+    --background-color: var(--grey-1);
+    --background-light-color: var(--grey-2);
+    --text-color: var(--grey-3);
+    --text-light-color: var(--grey-4);
+    --accent-1-color: var(--red);
+    --accent-1-dark-color: var(--dark-red);
   }
 
   html {
@@ -22,22 +33,26 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background: var(--dark-grey);
+    background: var(--background-color);
     font-family: Montserrat, IBM Plex Mono, Open-Sans, Helvetica, Sans-Serif;
-    color: var(--light-grey);
+    color: var(--text-color);
+    *::selection {
+      color: var(--background-color);
+      background: var(--accent-1-color);
+    }
 
     a {
       :link {
-        color: var(--white);
+        color: var(--text-light-color);
       }
       :visited {
-        color: var(--white);
+        color: var(--text-light-color);
       }
       :hover {
-        color: var(--peach);
+        color: var(--background-color);
       }
       :active {
-        color: var(--dark-peach);
+        color: var(--background-color);
       }
     }
   }

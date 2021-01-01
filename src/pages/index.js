@@ -5,6 +5,7 @@ import Obfuscate from 'react-obfuscate';
 import { siteMetadata } from '../../gatsby-config';
 import GlobalStyle from '@styles/global-style';
 import Icon from '@components/icons';
+import Cursor from '@components/cursor.js'
 
 const PageStyle = styled.div`
   max-width: 700px;
@@ -19,33 +20,28 @@ const PageStyle = styled.div`
   }
 
   p {
-    // font-family: IBM Plex Mono;
+    font-family: IBM Plex Mono;
     font-size: 25px;
-  }
-  #link-highlight {
-    background: #ffa984;
-    border-radius: 999px;
-    mix-blend-mode: difference;
-    position: absolute;
-    pointer-events: none;
-    transition: 0.15s ease;
-    height: 30px;
-    width: 30px;
   }
 `;
 
+const Head = styled.h1`
+  font-family: IBM Plex Mono;
+`;
+
 const SubHead = styled.h4`
-  color: var(--medium-grey);
+  color: var(--text-light-color);
   font-style: italic;
   span {
     font-family: IBM Plex Mono;
-    color: var(--peach);
+    color: var(--accent-1-color);
     font-style: normal;
     font-weight: 600;
   }
 `;
 
 const Links = styled.div`
+  position: static;
   display: flex;
   justify-content: space-between;
   font-size: 1.5em;
@@ -53,48 +49,13 @@ const Links = styled.div`
 
 export default function Page() {
   // New cursor: https://codepen.io/markmead/pen/aXjerK
-  useEffect(() => {
-    const PAGE_LINKS = document.querySelectorAll('a');
-    const HIGHLIGHT = document.getElementById('link-highlight');
-    let isOnElement = false;
-
-    // move highlighter
-    const moveHighlighter = (e) => {
-      if (isOnElement) return false;
-      HIGHLIGHT.style.left = `${e.pageX - 10}px`;
-      HIGHLIGHT.style.top = `${e.pageY - 10}px`;
-    };
-    document.addEventListener('mousemove', moveHighlighter);
-
-    // apply styling over target
-    const highlightLink = (ele) => {
-      HIGHLIGHT.style.left = `${ele.offsetLeft - 12}px`;
-      HIGHLIGHT.style.top = `${ele.offsetTop - 6}px`;
-      HIGHLIGHT.style.width = `${ele.offsetWidth + 24}px`;
-      HIGHLIGHT.style.height = `${ele.offsetHeight + 12}px`;
-      isOnElement = true;
-    };
-    PAGE_LINKS.forEach((link) =>
-      link.addEventListener('mouseenter', highlightLink.bind(null, link, false))
-    );
-
-    // default styling off target
-    const unHighlightLink = () => {
-      HIGHLIGHT.style.width = '20px';
-      HIGHLIGHT.style.height = '20px';
-      isOnElement = false;
-    };
-    PAGE_LINKS.forEach((link) =>
-      link.addEventListener('mouseleave', unHighlightLink)
-    );
-  }, []);
 
   return (
     <>
       <GlobalStyle />
 
       <PageStyle>
-        <h1>Hello!</h1>
+        <Head>Hello!</Head>
 
         <SubHead>
           <blockquote>
@@ -144,7 +105,8 @@ export default function Page() {
               </a>
             ))}
         </Links>
-        <div id="link-highlight"></div>
+        
+        <Cursor />
       </PageStyle>
     </>
   );
