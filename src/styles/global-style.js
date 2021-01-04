@@ -8,7 +8,6 @@ const GlobalStyle = createGlobalStyle`
     --dark-red: #c72424;
     --peach: #ffa984;
     --dark-peach: #b86440;
-    --red: #f04646;
     --grey-4: #cccccc;
     --grey-3: #888888;
     --grey-2: #444444;
@@ -18,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
     --background-color: var(--grey-1);
     --background-light-color: var(--grey-2);
     --text-color: var(--grey-3);
-    --text-light-color: var(--grey-4);
+    --text-light-color: var(--cream);
     --accent-1-color: var(--red);
     --accent-1-dark-color: var(--dark-red);
   }
@@ -38,10 +37,11 @@ const GlobalStyle = createGlobalStyle`
     color: var(--text-color);
     *::selection {
       color: var(--background-color);
-      background: var(--accent-1-color);
+      background-color: #f04646ee;
     }
 
     a {
+      text-decoration: none;
       :link {
         color: var(--text-light-color);
       }
@@ -56,28 +56,6 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
-
-  // Old cursor: https://codepen.io/g-norman/pen/oqMGyj
-  // #cursor {
-  //   position: absolute;
-  //   width: 20px;
-  //   height: 20px;
-  //   background: white;
-  //   border-radius: 50%;
-  //   mix-blend-mode: difference;
-  //   pointer-events: none;
-  //   transition: transform .15s ease-in-out;
-  //   z-index: 100;
-  // }
-  // useEffect(() => {
-  //   document.addEventListener('mousemove', function (event) {
-  //     const x = event.pageX - 10;
-  //     const y = event.pageY - 10;
-  //     const cursor = document.querySelector('#cursor');
-  //     cursor.style.left = x + 'px';
-  //     cursor.style.top = y + 'px';
-  //   });
-  // }, []);
 }
 `;
 

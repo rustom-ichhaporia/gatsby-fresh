@@ -30,7 +30,7 @@ const Head = styled.h1`
 `;
 
 const SubHead = styled.h4`
-  color: var(--text-light-color);
+  // color: var(--text-light-color);
   font-style: italic;
   span {
     font-family: IBM Plex Mono;
@@ -41,15 +41,15 @@ const SubHead = styled.h4`
 `;
 
 const Links = styled.div`
-  position: static;
   display: flex;
   justify-content: space-between;
   font-size: 1.5em;
+  // a:link, a:visited {
+  //   color: var(--grey-4);
+  // }
 `;
 
 export default function Page() {
-  // New cursor: https://codepen.io/markmead/pen/aXjerK
-
   return (
     <>
       <GlobalStyle />
