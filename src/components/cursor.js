@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
+// Based on: https://codepen.io/markmead/pen/aXjerK
+// Old cursor: https://codepen.io/g-norman/pen/oqMGyj
+
 const CursorStyle = styled.div`
   #outer-ring {
-    border: 2px solid var(--red);
+    border: 2px solid var(--accent-1-color);
     border-radius: 50%;
     position: absolute;
     pointer-events: none;
@@ -33,7 +36,6 @@ export default function Cursor() {
     const innerDot = document.getElementById('inner-dot');
     let isOnElement = false;
 
-    // move highlighter
     const moveHighlighter = (e) => {
       innerDot.style.left = `${e.pageX}px`;
       innerDot.style.top = `${e.pageY}px`;
@@ -62,7 +64,6 @@ export default function Cursor() {
     }
     document.addEventListener('click', mouseClickHighlighter);
 
-    // apply styling over target
     const highlightLink = (ele) => {
       outerRing.style.left = `${ele.offsetLeft + (ele.offsetWidth) / 2 - 1}px`;
       outerRing.style.top = `${ele.offsetTop + (ele.offsetHeight / 2) - 1}px`;
@@ -77,14 +78,12 @@ export default function Cursor() {
       link.addEventListener('mouseenter', highlightLink.bind(null, link, false))
     );
 
-    // default styling off target
     const unHighlightLink = () => {
       outerRing.style.width = '40px';
       outerRing.style.height = '40px';
       outerRing.style.background = 'transparent';
       outerRing.style.borderRadius = '50%';
       outerRing.style.zIndex = 'auto';
-      // outerRing.style.borderColor = 'var(--red)';
 
       isOnElement = false;
     };
