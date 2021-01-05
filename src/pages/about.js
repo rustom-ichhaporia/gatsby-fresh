@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import GlobalStyle from '@styles/global-style';
-import Home from '@components/home';
+import About from '@components/about';
 import SocialLinks from '@components/social-links';
 import Cursor from '@components/cursor';
 
@@ -14,25 +14,25 @@ const PageStyle = styled.div`
   font-size: 30px;
   line-height: 1.3em;
 
-  text-align: center;
-
   * {
     font-weight: 200;
   }
+
+  p {
+    font-family: IBM Plex Mono;
+    font-size: 25px;
+  }
 `;
-
-
 
 export default function Page() {
   return (
     <>
       <GlobalStyle />
-
       <PageStyle>
-        <Home />
+        <About />
 
         <SocialLinks />
-
+        
         <Cursor />
       </PageStyle>
     </>
