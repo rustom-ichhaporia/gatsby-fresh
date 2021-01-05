@@ -36,37 +36,38 @@ export default function Cursor() {
     const innerDot = document.getElementById('inner-dot');
     let isOnElement = false;
 
-    const moveHighlighter = (e) => {
-      innerDot.style.left = `${e.pageX}px`;
-      innerDot.style.top = `${e.pageY}px`;
+    const moveHighlighter = (element) => {
+      innerDot.style.left = `${element.pageX}px`;
+      innerDot.style.top = `${element.pageY}px`;
       if (isOnElement) return false;
-      outerRing.style.left = `${e.pageX}px`;
-      outerRing.style.top = `${e.pageY}px`;
+      outerRing.style.left = `${element.pageX}px`;
+      outerRing.style.top = `${element.pageY}px`;
     };
     document.addEventListener('mousemove', moveHighlighter);
 
-    const mouseDownHighlighter = (e) => {
-
+    const mouseDownHighlighter = () => {
       if (isOnElement) {
-        outerRing.style.width = `${outerRing.style.offsetWidth + 20}px`;
-        outerRing.style.height = `${e.height + 10}px`;
+        outerRing.style.width = `${outerRing.offsetWidth - 20}px`;
+        outerRing.style.height = `${outerRing.offsetHeight - 20}px`;
       } else {
         outerRing.style.width = '20px';
         outerRing.style.height = '20px';
       }
-    }
+    };
     document.addEventListener('mousedown', mouseDownHighlighter);
 
-    const mouseClickHighlighter = (e) => {
-      outerRing.style.background = 'var(--accent-1-dark-color)';
-    }
-    document.addEventListener('click', mouseClickHighlighter);
+    const mouseClickHighlighter = () => {
+      outerRing.style.background = 'transparent';
+      outerRing.style.width = '40px';
+      outerRing.style.height = '40px';
+    };
+    document.addEventListener('mouseup', mouseClickHighlighter);
 
-    const highlightLink = (ele) => {
-      outerRing.style.left = `${ele.offsetLeft + (ele.offsetWidth) / 2 - 1}px`;
-      outerRing.style.top = `${ele.offsetTop + (ele.offsetHeight / 2) - 1}px`;
-      outerRing.style.width = `${ele.offsetWidth + 15}px`;
-      outerRing.style.height = `${ele.offsetHeight + 15}px`;
+    const highlightLink = (element) => {
+      outerRing.style.left = `${element.offsetLeft + element.offsetWidth / 2 - 1}px`;
+      outerRing.style.top = `${element.offsetTop + element.offsetHeight / 2 - 1}px`;
+      outerRing.style.width = `${element.offsetWidth + 15}px`;
+      outerRing.style.height = `${element.offsetHeight + 15}px`;
       outerRing.style.borderRadius = '12px';
       outerRing.style.background = 'var(--accent-1-color)';
       outerRing.style.zIndex = '-1';
