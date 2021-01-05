@@ -20,6 +20,8 @@ const GlobalStyle = createGlobalStyle`
     --text-light-color: var(--cream);
     --accent-1-color: var(--red);
     --accent-1-dark-color: var(--dark-red);
+    --sans-font: Montserrat, sans-serif;
+    --mono-font: IBM Plex Mono, monospace;
   }
 
   html {
@@ -33,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     background: var(--background-color);
-    font-family: Montserrat, IBM Plex Mono, Open-Sans, Helvetica, Sans-Serif;
+    font-family: var(--sans-font), var(--mono-font), Open-Sans, sans-serif;
     color: var(--text-color);
     *::selection {
       color: var(--background-color);
