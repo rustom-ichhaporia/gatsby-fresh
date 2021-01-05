@@ -54,13 +54,11 @@ export default function Cursor() {
         outerRing.style.width = '20px';
         outerRing.style.height = '20px';
       }
-
     }
     document.addEventListener('mousedown', mouseDownHighlighter);
 
     const mouseClickHighlighter = (e) => {
-      outerRing.style.width = '40px';
-      outerRing.style.height = '40px';
+      outerRing.style.background = 'var(--accent-1-dark-color)';
     }
     document.addEventListener('click', mouseClickHighlighter);
 
@@ -70,7 +68,7 @@ export default function Cursor() {
       outerRing.style.width = `${ele.offsetWidth + 15}px`;
       outerRing.style.height = `${ele.offsetHeight + 15}px`;
       outerRing.style.borderRadius = '12px';
-      outerRing.style.background = 'var(--red)';
+      outerRing.style.background = 'var(--accent-1-color)';
       outerRing.style.zIndex = '-1';
       isOnElement = true;
     };
@@ -84,7 +82,6 @@ export default function Cursor() {
       outerRing.style.background = 'transparent';
       outerRing.style.borderRadius = '50%';
       outerRing.style.zIndex = 'auto';
-
       isOnElement = false;
     };
     pageLinks.forEach((link) =>
