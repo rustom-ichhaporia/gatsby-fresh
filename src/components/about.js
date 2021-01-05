@@ -2,14 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Head = styled.h1`
-  // font-family: IBM Plex Mono;
 `;
 
 const SubHead = styled.h4`
   // color: var(--text-light-color);
   font-style: italic;
   span {
-    font-family: IBM Plex Mono;
+    font-family: var(--mono-font);
     color: var(--accent-1-color);
     font-style: normal;
     font-weight: 600;

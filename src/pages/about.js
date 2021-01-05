@@ -19,7 +19,7 @@ const PageStyle = styled.div`
   }
 
   p {
-    font-family: IBM Plex Mono;
+    font-family: var(--mono-font);
     font-size: 25px;
   }
 `;
