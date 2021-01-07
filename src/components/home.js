@@ -12,6 +12,9 @@ export default function Home() {
       <h2>
         <a href="about">About</a>
       </h2>
+      <h2>
+        <a href="experience">Experience</a>
+      </h2>
     </>
   );
 }

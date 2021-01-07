@@ -37,6 +37,9 @@ const GlobalStyle = createGlobalStyle`
     background: var(--background-color);
     font-family: var(--sans-font), var(--mono-font), Open-Sans, sans-serif;
     color: var(--text-color);
+
+    overflow: hidden;
+
     *::selection {
       color: var(--background-color);
       background-color: #f04646ee;
