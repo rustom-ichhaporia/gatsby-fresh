@@ -1,12 +1,13 @@
 module.exports = {
+  pathPrefix: '/gatsby-fresh',
   siteMetadata: {
     title: "Rustom Ichhaporia's Home on the Web",
-    siteUrl: "https://rustom.dev",
+    siteUrl: 'https://rustom.dev',
     description: "The third iteration of Rustom Ichhaporia's personal website.",
     socialMedia: [
       {
         name: 'Email',
-        url: 'something at something'
+        url: 'rustom@rustom.dev',
       },
       {
         name: 'GitHub',
@@ -17,6 +18,14 @@ module.exports = {
         url: 'https://www.linkedin.com/in/rustom-ichhaporia',
       },
       {
+        name: 'Scholar',
+        url: 'https://scholar.google.com/citations?user=fhRRnW8AAAAJ',
+      },
+      {
+        name: 'Medium',
+        url: 'https://rustom-ichhaporia.medium.com',
+      },
+      {
         name: 'Instagram',
         url: 'https://www.instagram.com/rust.om',
       },
@@ -24,50 +33,46 @@ module.exports = {
         name: 'Twitter',
         url: 'https://twitter.com/cantspellrustom',
       },
-      {
-        name: 'Scholar',
-        url: 'https://scholar.google.com/citations?user=fhRRnW8AAAAJ'
-      }
     ],
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "UA-164610470-1",
+        trackingId: 'UA-164610470-1',
       },
     },
-    "gatsby-plugin-styled-components",
-    "styled-components",
-    "babel-plugin-styled-components",
-    "gatsby-plugin-sharp",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
-    "gatsby-plugin-offline",
+    'gatsby-plugin-styled-components',
+    'styled-components',
+    'babel-plugin-styled-components',
+    'gatsby-plugin-sharp',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-offline',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: "src/images/icon.png",
+        icon: 'src/images/icon.png',
       },
     },
-    "gatsby-transformer-remark",
-    "gatsby-plugin-mdx",
-    "gatsby-transformer-sharp",
+    'gatsby-transformer-remark',
+    'gatsby-plugin-mdx',
+    'gatsby-transformer-sharp',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
-        path: "./src/images/",
+        name: 'images',
+        path: './src/images/',
       },
-      __key: "images",
+      __key: 'images',
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: 'pages',
+        path: './src/pages/',
       },
-      __key: "pages",
+      __key: 'pages',
     },
   ],
 };
