@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import {
   FaEnvelope,
   FaLinkedinIn,
@@ -8,9 +9,15 @@ import {
   FaMediumM,
 } from '@meronex/icons/fa';
 import { SiGooglescholar } from '@meronex/icons/si';
-import {MdLink} from '@meronex/icons/md'; 
+import { MdLink } from '@meronex/icons/md';
 
-const Icon = ({ name }) => {
+const IconStyle = styled.div`
+  * {
+    vertical-align: bottom;
+  }
+`;
+
+const IconSwitch = ({ name }) => {
   switch (name) {
     case 'Email':
       return <FaEnvelope />;
@@ -26,11 +33,17 @@ const Icon = ({ name }) => {
       return <FaTwitter />;
     case 'Instagram':
       return <FaInstagram />;
-    case 'Link': 
+    case 'Link':
       return <MdLink />;
     default:
       return <FaEnvelope />;
   }
 };
 
-export default Icon;
+export default function Icon({ name }) {
+  return (
+    <IconStyle>
+      <IconSwitch name={name} />
+    </IconStyle>
+  );
+}

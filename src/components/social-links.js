@@ -26,8 +26,7 @@ export default function SocialLinks() {
               }
               aria-label={name}
               target="_blank"
-              rel="noreferrer"
-              className="buttons"
+              rel="noopener noreferrer"
             >
               <Icon name={name} />
             </a>

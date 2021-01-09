@@ -5,7 +5,7 @@ import GlobalStyle from '@styles/global-style';
 import { Projects, SocialLinks, Cursor } from '@components/index';
 
 const PageStyle = styled.div`
-  max-width: 1400px;
+  max-width: 900px;//1400px;
   margin: auto;
   padding: 20px;
 `;
