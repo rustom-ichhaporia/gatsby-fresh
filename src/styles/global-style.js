@@ -46,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
     // overflow: hidden;
     overflow-y: scroll;
 
-    // Hide scrollbar
+    // Hide scrollbar in multiple browsers
     scrollbar-width: none;
     -ms-overflow-style: none;
     ::-webkit-scrollbar {
