@@ -10,4 +10,4 @@ tech:
 showInProjects: true
 ---
 
-Some experiments with image pixelization and colorization I made with Python and OpenCV (and pictures of my friends)
+Some experiments with image pixelization and colorization I made with Python and OpenCV (and pictures of my friends).

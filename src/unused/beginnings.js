@@ -86,7 +86,7 @@ export default function MainPage() {
   }, []);
 
   return (
-    <>
+    <div>
       <GlobalStyle />
       <div id="cursor"></div>
 
@@ -120,6 +120,6 @@ export default function MainPage() {
           <img src={Portrait} alt="Portrait" />
         </div>
       </Container>
-    </>
+    </div>
   );
 }

@@ -57,7 +57,6 @@ export default function Cursor() {
     document.addEventListener('mousedown', mouseDownHighlighter);
 
     const mouseClickHighlighter = () => {
-      outerRing.style.background = 'transparent';
       outerRing.style.width = '40px';
       outerRing.style.height = '40px';
     };

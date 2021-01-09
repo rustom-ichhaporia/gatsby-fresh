@@ -17,7 +17,7 @@ const SubHead = styled.h4`
 
 export default function About() {
   return (
-    <>
+    <div>
       <Head>Hello!</Head>
 
       <SubHead>
@@ -49,6 +49,6 @@ export default function About() {
         Lifecycle Financial Planning research group.
       </p>
       <br />
-    </>
+    </div>
   );
 }

@@ -2,24 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 
 import GlobalStyle from '@styles/global-style';
-import { Cursor, Experience, SocialLinks } from '@components';
+import { Projects, SocialLinks, Cursor } from '@components/index';
 
 const PageStyle = styled.div`
-  max-width: 700px;
+  max-width: 1400px;
   margin: auto;
   padding: 20px;
-
-  font-size: 30px;
-  line-height: 1.3em;
 `;
 
 export default function Page() {
   return (
     <div>
       <GlobalStyle />
-      <Experience />
-      <SocialLinks />
-      <Cursor />
+
+      <PageStyle>
+        <Projects />
+
+        <SocialLinks />
+
+        <Cursor />
+      </PageStyle>
     </div>
   );
 }

@@ -8,6 +8,7 @@ import {
   FaMediumM,
 } from '@meronex/icons/fa';
 import { SiGooglescholar } from '@meronex/icons/si';
+import {MdLink} from '@meronex/icons/md'; 
 
 const Icon = ({ name }) => {
   switch (name) {
@@ -25,6 +26,8 @@ const Icon = ({ name }) => {
       return <FaTwitter />;
     case 'Instagram':
       return <FaInstagram />;
+    case 'Link': 
+      return <MdLink />;
     default:
       return <FaEnvelope />;
   }
