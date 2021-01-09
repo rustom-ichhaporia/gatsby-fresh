@@ -43,8 +43,16 @@ const GlobalStyle = createGlobalStyle`
       font-weight: 200;
     }
 
-    overflow: hidden;
+    // overflow: hidden;
     overflow-y: scroll;
+
+    // Hide scrollbar
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    ::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
 
     *::selection {
       color: var(--background-color);

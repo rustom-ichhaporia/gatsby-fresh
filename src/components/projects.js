@@ -6,11 +6,18 @@ import { IconContext } from '@meronex/icons';
 
 const ProjectsStyle = styled.div`
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 15px;
+  margin: auto;
+
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-bottom: 50px;
 `;
 
 const ProjectItem = styled.div`
@@ -52,14 +59,30 @@ export default function Projects() {
       {/* <IconContext.Provider > */}
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <ProjectItem key={node.id}>
-          <h1>
+          <h2>
             {node.frontmatter.title} <span> {node.frontmatter.date}</span>
-          </h1>
-          <a href={node.external}>
-            <Icon name={node.} />
-          </a>
-
-
+          </h2>
+          {/* {{if ({node.frontmatter.github} != '') {<Icon name={node.frontmatter.github} />}}} */}
+          {node.frontmatter.github && (
+            <a
+              href={node.frontmatter.github}
+              aria-label="Link to GitHub repo"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Icon name="GitHub" />
+            </a>
+          )}
+          {node.frontmatter.external && (
+            <a
+              href={node.frontmatter.external}
+              aria-label="Link to GitHub repo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="Link" />
+            </a>
+          )}
 
           <p>{node.excerpt}</p>
           <div dangerouslySetInnerHTML={{ __html: node.html }} />
