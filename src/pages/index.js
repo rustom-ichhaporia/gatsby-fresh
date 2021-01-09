@@ -2,9 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import GlobalStyle from '@styles/global-style';
-import Home from '@components/home';
-import SocialLinks from '@components/social-links';
-import Cursor from '@components/cursor';
+import {Cursor, Home, SocialLinks} from '@components/index';
 
 const PageStyle = styled.div`
   max-width: 700px;
@@ -15,17 +13,13 @@ const PageStyle = styled.div`
   line-height: 1.3em;
 
   text-align: center;
-
-  * {
-    font-weight: 200;
-  }
 `;
 
 
 
 export default function Page() {
   return (
-    <>
+    <div>
       <GlobalStyle />
 
       <PageStyle>
@@ -35,6 +29,6 @@ export default function Page() {
 
         <Cursor />
       </PageStyle>
-    </>
+    </div>
   );
 }

@@ -14,10 +14,6 @@ const PageStyle = styled.div`
   font-size: 30px;
   line-height: 1.3em;
 
-  * {
-    font-weight: 200;
-  }
-
   p {
     font-family: var(--mono-font);
     font-size: 25px;
@@ -26,7 +22,7 @@ const PageStyle = styled.div`
 
 export default function Page() {
   return (
-    <>
+    <div>
       <GlobalStyle />
       <PageStyle>
         <About />
@@ -35,6 +31,6 @@ export default function Page() {
         
         <Cursor />
       </PageStyle>
-    </>
+    </div>
   );
 }

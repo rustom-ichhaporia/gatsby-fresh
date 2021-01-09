@@ -37,8 +37,14 @@ const GlobalStyle = createGlobalStyle`
     background: var(--background-color);
     font-family: var(--sans-font), var(--mono-font), Open-Sans, sans-serif;
     color: var(--text-color);
+    font-size: 20px;
+
+    * {
+      font-weight: 200;
+    }
 
     overflow: hidden;
+    overflow-y: scroll;
 
     *::selection {
       color: var(--background-color);

@@ -5,11 +5,11 @@ import React from 'react';
 
 export default function Experience() {
   return (
-    <>
+    <div>
       <p>
         Experiene 1
         Experience 2
       </p>
-    </>
+    </div>
   );
 }
