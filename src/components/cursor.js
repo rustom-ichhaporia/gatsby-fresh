@@ -4,29 +4,27 @@ import styled from 'styled-components';
 // Based on: https://codepen.io/markmead/pen/aXjerK
 // Old cursor: https://codepen.io/g-norman/pen/oqMGyj
 
-const CursorStyle = styled.div`
-  #outer-ring {
-    border: 2px solid var(--accent-1-color);
-    border-radius: 50%;
-    position: absolute;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: left 0.1s, top 0.1s, width 0.3s, height 0.3s, border-radius 0.5s;
-    height: 40px;
-    width: 40px;
-    // mix-blend-mode: difference;
-  }
+const OuterRing = styled.div`
+  border: 2px solid var(--accent-1-color);
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: left 0.1s, top 0.1s, width 0.3s, height 0.3s, border-radius 0.5s;
+  height: 40px;
+  width: 40px;
+  // mix-blend-mode: difference;
+`;
 
-  #inner-dot {
-    position: absolute;
-    background: var(--white);
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    border-radius: 100%;
-    width: 6px;
-    height: 6px;
-    // mix-blend-mode: difference;
-  }
+const InnerRing = styled.div`
+  position: absolute;
+  background: var(--white);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 100%;
+  width: 6px;
+  height: 6px;
+  // mix-blend-mode: difference;
 `;
 
 export default function Cursor() {
@@ -63,8 +61,15 @@ export default function Cursor() {
     document.addEventListener('mouseup', mouseClickHighlighter);
 
     const highlightLink = (element) => {
-      outerRing.style.left = `${element.offsetLeft + element.offsetWidth / 2 - 1}px`;
-      outerRing.style.top = `${element.offsetTop + element.offsetHeight / 2 - 1}px`;
+      // Fix for absolutely positioned elements
+      outerRing.style.left = `${element.getBoundingClientRect().left + element.getBoundingClientRect().width / 2}px`;
+      outerRing.style.top = `${element.getBoundingClientRect().top + element.getBoundingClientRect().height / 2}px`;
+      // outerRing.style.left = `${
+      //   element.offsetLeft + element.offsetWidth / 2 - 1
+      // }px`;
+      // outerRing.style.top = `${
+      //   element.offsetTop + element.offsetHeight / 2 - 1
+      // }px`;
       outerRing.style.width = `${element.offsetWidth + 15}px`;
       outerRing.style.height = `${element.offsetHeight + 15}px`;
       outerRing.style.borderRadius = '12px';
@@ -88,10 +93,11 @@ export default function Cursor() {
       link.addEventListener('mouseleave', unHighlightLink)
     );
   }, []);
+
   return (
-    <CursorStyle>
-      <div id="outer-ring" />
-      <div id="inner-dot" />
-    </CursorStyle>
+    <>
+      <OuterRing id="outer-ring" />
+      <InnerRing id="inner-dot" />
+    </>
   );
 }

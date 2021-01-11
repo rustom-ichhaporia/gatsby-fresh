@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
     --grey-1: #151515;
     --black: #000000;
 
-    --background-color: var(--grey-1);
+    --background-color: var(--black);
     --background-light-color: var(--grey-2);
     --text-color: var(--grey-3);
     --text-light-color: var(--cream);

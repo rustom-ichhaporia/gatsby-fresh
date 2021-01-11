@@ -84,8 +84,7 @@ export default function Projects() {
             </a>
           )}
 
-          <p>{node.excerpt}</p>
-          <div dangerouslySetInnerHTML={{ __html: node.html }} />
+          {/* <div dangerouslySetInnerHTML={{ __html: node.html }} /> */}
         </ProjectItem>
       ))}
       {/* </IconContext.Provider> */}

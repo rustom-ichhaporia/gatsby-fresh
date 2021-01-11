@@ -11,13 +11,13 @@ export default function Home() {
   return (
     <div>
       <h2>
-        <Link to="about">About</Link>
+        <Link to="about">ABOUT</Link>
       </h2>
       <h2>
-        <Link to="experience">Experience</Link>
+        <Link to="experience">EXPERIENCE</Link>
       </h2>
       <h2>
-        <Link to="projects">Projects</Link>
+        <Link to="projects">PROJECTS</Link>
       </h2>
     </div>
   );

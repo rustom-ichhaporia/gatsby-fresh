@@ -20,8 +20,9 @@ export default function Page() {
 
         <SocialLinks />
 
-        <Cursor />
       </PageStyle>
+      <Cursor />
+
     </div>
   );
 }

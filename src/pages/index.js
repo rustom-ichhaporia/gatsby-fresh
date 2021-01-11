@@ -2,20 +2,26 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import GlobalStyle from '@styles/global-style';
-import {Cursor, Home, SocialLinks} from '@components/index';
+import { Cursor, Home, SocialLinks } from '@components/index';
 
 const PageStyle = styled.div`
-  max-width: 700px;
-  margin: auto;
-  padding: 20px;
+  // height: 100vh;
+
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  // justify-content: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   font-size: 30px;
   line-height: 1.3em;
 
   text-align: center;
 `;
-
-
 
 export default function Page() {
   return (
@@ -24,11 +30,10 @@ export default function Page() {
 
       <PageStyle>
         <Home />
-
         <SocialLinks />
-
-        <Cursor />
       </PageStyle>
+
+      <Cursor />
     </div>
   );
 }
