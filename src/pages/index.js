@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
 import GlobalStyle from '@styles/global-style';
-import { Cursor, Home, SocialLinks } from '@components/index';
+import { Home, Layout } from '@components';
 
 const PageStyle = styled.div`
   position: absolute;
@@ -18,15 +18,12 @@ const PageStyle = styled.div`
 
 export default function Page() {
   return (
-    <div>
+    <>
       <GlobalStyle />
 
-      <PageStyle>
+      <Layout> 
         <Home />
-        <SocialLinks />
-      </PageStyle>
-
-      <Cursor />
-    </div>
+      </Layout>
+    </>
   );
 }

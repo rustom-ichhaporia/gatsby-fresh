@@ -5,7 +5,6 @@ const Head = styled.h1`
 `;
 
 const SubHead = styled.h4`
-  // color: var(--text-light-color);
   font-style: italic;
   span {
     font-family: var(--mono-font);

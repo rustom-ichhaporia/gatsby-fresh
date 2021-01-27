@@ -2,25 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 import GlobalStyle from '@styles/global-style';
-import { Projects, SocialLinks, Cursor } from '@components/index';
+import { Layout, Projects } from '@components';
 
-const PageStyle = styled.div`
-  max-width: 900px;//1400px;
-  margin: auto;
-  padding: 20px;
-`;
 
 export default function Page() {
   return (
-    <div>
+    <>
       <GlobalStyle />
 
-      <PageStyle>
+      <Layout>
         <Projects />
-        <SocialLinks />
-      </PageStyle>
-
-      <Cursor />
-    </div>
+      </Layout>
+    </>
   );
 }

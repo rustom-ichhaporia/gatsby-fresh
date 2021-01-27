@@ -40,6 +40,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: var(--mono-font), Open-Sans, sans-serif;
     color: var(--text-color);
     font-size: 20px;
+    line-height: 1.3em;
 
     * {
       font-weight: 200;

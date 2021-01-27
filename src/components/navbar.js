@@ -30,8 +30,8 @@ export default function NavBar() {
     <Header>
       <Navigation>
         {navLinks &&
-          navLinks.map(({ url, name }, i) => (
-            <li key={i}>
+          navLinks.map(({ url, name }) => (
+            <li>
               <Link to={url}>{name}</Link>
             </li>
           ))}
