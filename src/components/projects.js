@@ -21,12 +21,14 @@ const ProjectsStyle = styled.div`
 `;
 
 const ProjectItem = styled.div`
-  margin: auto;
+  // margin: auto;
   margin-top: 10px;
   margin-bottom: 10px;
   // width: 80%;
   border: 2px solid var(--accent-1-dark-color);
-  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export default function Projects() {
@@ -56,13 +58,12 @@ export default function Projects() {
 
   return (
     <ProjectsStyle>
-      {/* <IconContext.Provider > */}
+      <IconContext.Provider value={{ size: '35px' }}>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <ProjectItem key={node.id}>
           <h2>
             {node.frontmatter.title} <span> {node.frontmatter.date}</span>
           </h2>
-          {/* {{if ({node.frontmatter.github} != '') {<Icon name={node.frontmatter.github} />}}} */}
           {node.frontmatter.github && (
             <a
               href={node.frontmatter.github}
@@ -87,7 +88,7 @@ export default function Projects() {
           {/* <div dangerouslySetInnerHTML={{ __html: node.html }} /> */}
         </ProjectItem>
       ))}
-      {/* </IconContext.Provider> */}
+      </IconContext.Provider>
     </ProjectsStyle>
   );
 }

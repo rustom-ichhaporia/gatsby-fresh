@@ -63,7 +63,7 @@ export default function Cursor() {
     const highlightLink = (element) => {
       // Fix for absolutely positioned elements
       outerRing.style.left = `${element.getBoundingClientRect().left + element.getBoundingClientRect().width / 2}px`;
-      outerRing.style.top = `${element.getBoundingClientRect().top + element.getBoundingClientRect().height / 2}px`;
+      outerRing.style.top = `${element.getBoundingClientRect().top + element.getBoundingClientRect().height / 2 + 1}px`;
       // outerRing.style.left = `${
       //   element.offsetLeft + element.offsetWidth / 2 - 1
       // }px`;

@@ -5,13 +5,6 @@ import GlobalStyle from '@styles/global-style';
 import { Cursor, Home, SocialLinks } from '@components/index';
 
 const PageStyle = styled.div`
-  // height: 100vh;
-
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
-  // justify-content: center;
-
   position: absolute;
   top: 50%;
   left: 50%;

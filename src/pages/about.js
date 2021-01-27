@@ -14,8 +14,6 @@ const PageStyle = styled.div`
   font-size: 30px;
   line-height: 1.3em;
 
-  transform: translate(20%, 20%);
-
   p {
     font-family: var(--mono-font);
     font-size: 25px;

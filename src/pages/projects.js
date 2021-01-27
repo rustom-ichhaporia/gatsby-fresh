@@ -17,12 +17,10 @@ export default function Page() {
 
       <PageStyle>
         <Projects />
-
         <SocialLinks />
-
       </PageStyle>
-      <Cursor />
 
+      <Cursor />
     </div>
   );
 }

@@ -10,15 +10,15 @@ const PageStyle = styled.div`
 export default function Home() {
   return (
     <div>
-      <h2>
+      <h1>
         <Link to="about">ABOUT</Link>
-      </h2>
-      <h2>
+      </h1>
+      <h1>
         <Link to="experience">EXPERIENCE</Link>
-      </h2>
-      <h2>
+      </h1>
+      <h1>
         <Link to="projects">PROJECTS</Link>
-      </h2>
+      </h1>
     </div>
   );
 }
