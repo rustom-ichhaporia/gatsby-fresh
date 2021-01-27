@@ -22,6 +22,10 @@ const ItemTitle = styled.h3`
   // span {
   //   text-align: right;
   // }
+
+  #date {
+    float: right;
+  }
 `;
 
 const ItemDescription = styled.div``;
@@ -56,8 +60,8 @@ export default function Experience() {
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <ExperienceItem key={node.id}>
           <ItemTitle>
-            {node.frontmatter.title} <br />
-            {node.frontmatter.range}
+            {node.frontmatter.title}
+            <span id="date"> {node.frontmatter.range} </span>
           </ItemTitle>
 
           {/* <ItemDescription> */}

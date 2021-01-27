@@ -8,6 +8,12 @@ const Wrapper = styled.div`
   padding: 20px;
 
   line-height: 1.3em;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 export default function Layout({ children }) {
@@ -15,7 +21,7 @@ export default function Layout({ children }) {
     <Wrapper>
       <Cursor />
 
-      {/* <NavBar /> */}
+      <NavBar />
       {children}
       <SocialLinks />
     </Wrapper>

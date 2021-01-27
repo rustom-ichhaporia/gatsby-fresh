@@ -2,9 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
-const Header = styled.header``;
+const Header = styled.header`
+  width: 100%;
+  height: 100%;
+`;
 
-const Navigation = styled.nav``;
+const Navigation = styled.nav`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+`;
 
 export default function NavBar() {
   const navLinks = [
@@ -14,15 +21,11 @@ export default function NavBar() {
     },
     {
       name: 'Experience',
-      url: '/jobs',
+      url: '/experience',
     },
     {
-      name: 'Work',
+      name: 'Projects',
       url: '/projects',
-    },
-    {
-      name: 'Contact',
-      url: '/contact',
     },
   ];
 
@@ -31,9 +34,9 @@ export default function NavBar() {
       <Navigation>
         {navLinks &&
           navLinks.map(({ url, name }) => (
-            <li>
-              <Link to={url}>{name}</Link>
-            </li>
+            <Link id="links" to={url}>
+              {name}
+            </Link>
           ))}
       </Navigation>
     </Header>
