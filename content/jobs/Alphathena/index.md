@@ -1,9 +1,9 @@
 ---
-date: '2020-05-01'
 title: 'Machine Learning Intern'
 company: 'Alphathena'
 location: 'Schaumburg, IL'
-range: 'June - August 2020'
+start: '2020-06-01'
+end: '2020-08-01'
 url: 'https://alphathena.com/'
 ---
 

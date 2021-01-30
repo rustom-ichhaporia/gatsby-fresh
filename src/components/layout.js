@@ -7,9 +7,6 @@ const Wrapper = styled.div`
   margin: auto;
   padding: 20px;
 
-  line-height: 1.3em;
-
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +18,7 @@ export default function Layout({ children }) {
     <Wrapper>
       <Cursor />
 
-      <NavBar />
+      <NavBar style={{marginBottom: '90px'}}/>
       {children}
       <SocialLinks />
     </Wrapper>

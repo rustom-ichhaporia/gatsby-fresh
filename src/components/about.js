@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Head = styled.h1`
+const Head = styled.p`
 `;
 
-const SubHead = styled.h4`
+const SubHead = styled.p`
   font-style: italic;
   span {
     font-family: var(--mono-font);

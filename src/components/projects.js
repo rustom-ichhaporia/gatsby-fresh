@@ -11,7 +11,7 @@ const ProjectsStyle = styled.div`
   // align-items: center;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-gap: 15px;
   margin: auto;
 
@@ -25,7 +25,8 @@ const ProjectItem = styled.div`
   margin-top: 10px;
   margin-bottom: 10px;
   // width: 80%;
-  border: 2px solid var(--accent-1-dark-color);
+  // border: 2px solid var(--accent-1-dark-color);
+  box-shadow: 0px 0px 25px 5px #000000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -61,9 +62,9 @@ export default function Projects() {
       <IconContext.Provider value={{ size: '35px' }}>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <ProjectItem key={node.id}>
-          <h2>
+          <p>
             {node.frontmatter.title} <span> {node.frontmatter.date}</span>
-          </h2>
+          </p>
           {node.frontmatter.github && (
             <a
               href={node.frontmatter.github}

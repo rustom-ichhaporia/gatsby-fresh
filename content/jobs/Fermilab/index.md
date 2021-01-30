@@ -1,9 +1,9 @@
 ---
-date: '2018-08-01'
 title: 'Particle Physics Data Scientist'
 company: 'Fermilab'
 location: 'Batavia, IL'
-range: 'August 2018 - May 2020'
+start: '2018-08-01'
+end: '2020-05-01'
 url: 'https://www.fnal.gov/'
 ---
 

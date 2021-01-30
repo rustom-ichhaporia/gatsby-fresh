@@ -1,9 +1,9 @@
 ---
-date: '2021-01-25'
 title: 'Data Science Intern'
 company: 'Motorola Solutions'
 location: 'Champaign, IL'
-range: 'Jan. - May 2020'
+start: '2021-01-01'
+end: '2021-05-01'
 url: ''
 ---
 

@@ -1,9 +1,9 @@
 ---
-date: '2020-08-21'
 title: 'AI Research Intern'
 company: 'Illinois Risk Lab'
 location: 'Champaign, IL'
-range: 'August - December 2020'
+start: '2020-08-01'
+end: '2020-12-01'
 url: 'https://irisklabuiuc.wixsite.com/actsi/associates'
 ---
 

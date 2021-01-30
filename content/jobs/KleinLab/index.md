@@ -1,9 +1,9 @@
 ---
-date: '2018-05-14'
-title: 'Research Assistant'
-company: 'Northwestern University'
+title: 'Neurobiology Research Assistant'
+company: 'Northwestern University Klein Lab'
 location: 'Boston, MA'
-range: 'May 2018 - Present'
+start: '2018-05-01'
+end: '2018-08-01'
 url: 'https://www.kleinlab.org/'
 ---
 
