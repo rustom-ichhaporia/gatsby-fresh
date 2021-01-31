@@ -4,12 +4,19 @@ import { TransitionState, TransitionLink } from 'gatsby-plugin-transition-link';
 import { Cursor, NavBar, SocialLinks } from '@components';
 
 const Wrapper = styled.div`
+  min-height: 100vh;
   max-width: 700px;
   margin: auto;
-  padding: 20px;
 
+  // display: flex;
+  // align-content: center;
+  // justify-content: center;
+  // flex-direction: column;
+`;
+
+const ChildrenWrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: center;
   flex-direction: column;
 `;
@@ -25,7 +32,6 @@ const Separator = styled.hr`
 export default function Layout({ children, hideNavBar }) {
   return (
     <Wrapper>
-      <Cursor />
       {!hideNavBar && (
         <>
           <NavBar /> <Separator />
@@ -33,6 +39,7 @@ export default function Layout({ children, hideNavBar }) {
       )}
       {children}
       <SocialLinks />
+      <Cursor />
     </Wrapper>
   );
 }

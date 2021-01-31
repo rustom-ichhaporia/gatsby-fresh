@@ -47,8 +47,8 @@ export default function About() {
           rel="noopener noreferrer"
         >
           Motorola Solutions
-        </a>{' '}
-        and serving as a Course Assistant + Code Moderator for{' '}
+        </a>{', '}
+        and serving as a Course Assistant and Code Review Moderator for the course{' '}
         <a
           href="https://courses.grainger.illinois.edu/CS126/sp2021/"
           aria-label="Link to CS 126: Software Design Studio"

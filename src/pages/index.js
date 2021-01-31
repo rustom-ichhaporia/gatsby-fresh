@@ -10,7 +10,11 @@ const PageStyle = styled.div`
   // left: 50%;
   // transform: translate(-50%, -50%);
 
-  
+  height: 100%;
+
+
+  display: flex;
+  justify-content: space-between;
 
 
   font-size: 30px;
@@ -24,7 +28,7 @@ export default function Page() {
     <>
       <GlobalStyle />
 
-      <Layout>
+      <Layout hideNavBar={true}>
         <PageStyle>
           <Home />
         </PageStyle>

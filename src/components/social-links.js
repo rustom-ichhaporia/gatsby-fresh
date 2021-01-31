@@ -5,12 +5,16 @@ import { siteMetadata } from '../../gatsby-config';
 import Icon from '@components/icons';
 
 const SocialLinksStyle = styled.div`
+// background-color: var(--background-color);
+position: relative;
+  bottom: 0px;
   width: 100%;
-  height: 100%;
+  height: 60px;
   margin: auto;
   max-width: 700px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   font-size: 1.5em;
 `;
 

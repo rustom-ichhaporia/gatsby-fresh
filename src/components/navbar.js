@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 const Header = styled.header`
   width: 100%;
-  height: 100%;
+  margin-top: 20px;
 `;
 
 const Navigation = styled.nav`
@@ -16,15 +16,15 @@ const Navigation = styled.nav`
 export default function NavBar() {
   const navLinks = [
     {
-      name: 'About',
+      name: 'ABOUT',
       url: '/about',
     },
     {
-      name: 'Experience',
+      name: 'EXPERIENCE',
       url: '/experience',
     },
     {
-      name: 'Projects',
+      name: 'PROJECTS',
       url: '/projects',
     },
   ];
