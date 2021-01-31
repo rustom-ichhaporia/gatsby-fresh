@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TransitionState, TransitionLink } from 'gatsby-plugin-transition-link';
 import { Cursor, NavBar, SocialLinks } from '@components';
 
 const Wrapper = styled.div`
@@ -13,12 +14,23 @@ const Wrapper = styled.div`
   flex-direction: column;
 `;
 
-export default function Layout({ children }) {
+const Separator = styled.hr`
+  margin-top: 20px;
+  width: 100%;
+  border: 1px solid var(--background-light-color);
+  // background-color: var(--red);
+  // border: 1px var(--text-color);
+`;
+
+export default function Layout({ children, hideNavBar }) {
   return (
     <Wrapper>
       <Cursor />
-
-      <NavBar style={{marginBottom: '90px'}}/>
+      {!hideNavBar && (
+        <>
+          <NavBar /> <Separator />
+        </>
+      )}
       {children}
       <SocialLinks />
     </Wrapper>

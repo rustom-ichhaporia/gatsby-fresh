@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
     background: var(--background-color);
     font-family: var(--mono-font), Open-Sans, sans-serif;
     color: var(--text-color);
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.5em;
 
     * {

@@ -5,11 +5,6 @@ import { useStaticQuery } from 'gatsby';
 // Graphql extraction of experience
 
 const ExperienceItem = styled.div`
-  // ul li:before {
-  //   content: "+";
-  //   position: absolute;
-  //   left: 0;
-  // }
   li {
     font: IBM Plex Mono;
 
@@ -18,16 +13,26 @@ const ExperienceItem = styled.div`
   }
 `;
 
-const ItemTitle = styled.h3`
-  color: var(--accent-1-color);
-  #date {
-    color: var(--text-color);
+const ItemTitle = styled.h2`
+  // color: var(--accent-1-color);
+  #company {
+    color: var(--accent-1-color);
     float: right;
+    text-align: right;
+    // a {
+    //   color: var(--red);
+    // }
+    // a:hover {
+    //   color: var(--black);
+    // }
   }
 `;
 
-const ItemDescription = styled.div`
+const ItemDate = styled.p`
+  text-align: right;
 `;
+
+const ItemDescription = styled.div``;
 
 export default function Experience() {
   const data = useStaticQuery(graphql`
@@ -60,18 +65,28 @@ export default function Experience() {
         <ExperienceItem key={node.id}>
           <ItemTitle>
             {node.frontmatter.title}
-            <span id="date"> {node.frontmatter.company} </span>
-          </ItemTitle>
-          {node.frontmatter.start} - {node.frontmatter.end} 
 
+            <span id="company">
+              @{' '}
+              <a
+                href={node.frontmatter.url}
+                aria-label="Link to company page"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {node.frontmatter.company}{' '}
+              </a>{' '}
+            </span>
+          </ItemTitle>
+          <ItemDate>
+            {node.frontmatter.start} - {node.frontmatter.end}
+          </ItemDate>
 
           {/* <ItemDescription> */}
           <div dangerouslySetInnerHTML={{ __html: node.html }} />
           {/* </ItemDescription> */}
           <br />
-
         </ExperienceItem>
-        
       ))}
     </div>
   );

@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Head = styled.p`
-`;
+const Head = styled.p``;
 
 const SubHead = styled.p`
   font-style: italic;
@@ -40,12 +39,25 @@ export default function About() {
 
       <p>
         I'm currently studying at the University of Illinois at
-        Urbana-Champaign, working as an AI Research Intern at the{' '}
-        <a href="https://irisklabuiuc.wixsite.com/actsi/associates">
-          Illinois Risk Lab
+        Urbana-Champaign, working as a Data Science Intern at{' '}
+        <a
+          href="https://researchpark.illinois.edu/tenant_directory/motorola-solutions/"
+          aria-label="Link to Motorola Solutions"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Motorola Solutions
         </a>{' '}
-        where I facilitate the end-to-end data pipeline for the AI-Powered
-        Lifecycle Financial Planning research group.
+        and serving as a Course Assistant + Code Moderator for{' '}
+        <a
+          href="https://courses.grainger.illinois.edu/CS126/sp2021/"
+          aria-label="Link to CS 126: Software Design Studio"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          CS 126: Software Design Studio
+        </a>
+        .
       </p>
       <br />
     </div>
