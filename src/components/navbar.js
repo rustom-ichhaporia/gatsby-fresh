@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 const Header = styled.header`
   width: 100%;
-  margin-top: 20px;
+  padding-top: 20px;
 `;
 
 const Navigation = styled.nav`

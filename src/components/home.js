@@ -3,24 +3,28 @@ import styled from 'styled-components';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
 const PageStyle = styled.div`
-  margin: auto;
-  text-align: center;
+position: absolute;
+// vertical-align: middle;
   font-size: 30px;
   line-height: 1.3em;
+`;
+
+const SectionLink = styled.h1`
+// display: inline-block;
 `;
 
 export default function Home() {
   return (
     <PageStyle>
-      <h1>
+      <SectionLink>
         <Link to="about">ABOUT</Link>
-      </h1>
-      <h1>
+      </SectionLink>
+      <SectionLink>
         <Link to="experience">EXPERIENCE</Link>
-      </h1>
-      <h1>
+      </SectionLink>
+      <SectionLink>
         <Link to="projects">PROJECTS</Link>
-      </h1>
+      </SectionLink>
     </PageStyle>
   );
 }

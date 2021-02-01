@@ -7,39 +7,51 @@ const Wrapper = styled.div`
   min-height: 100vh;
   max-width: 700px;
   margin: auto;
-
-  // display: flex;
-  // align-content: center;
-  // justify-content: center;
-  // flex-direction: column;
+  position: relative;
 `;
 
 const ChildrenWrapper = styled.div`
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  flex-direction: column;
+  position: relative;
+  height: 100%;
+  padding-bottom: 60px;
 `;
 
 const Separator = styled.hr`
   margin-top: 20px;
   width: 100%;
   border: 1px solid var(--background-light-color);
-  // background-color: var(--red);
-  // border: 1px var(--text-color);
 `;
 
-export default function Layout({ children, hideNavBar }) {
+const Footer = styled.div`
+  width: 100%;
+  position: absolute;
+  // margin-top: 20px;
+  bottom: 0px;
+`;
+
+export default function Layout({ children, hideNavBar, hideFooter }) {
   return (
-    <Wrapper>
-      {!hideNavBar && (
-        <>
-          <NavBar /> <Separator />
-        </>
-      )}
-      {children}
-      <SocialLinks />
+    <>
+      <Wrapper>
+        {!hideNavBar && (
+          <>
+            <NavBar /> <Separator />
+          </>
+        )}
+        <ChildrenWrapper>
+        {children}
+
+        </ChildrenWrapper>
+  
+        {!hideFooter && (
+          <Footer>
+            <Separator />
+
+            <SocialLinks />
+          </Footer>
+        )}
+      </Wrapper>
       <Cursor />
-    </Wrapper>
+    </>
   );
 }

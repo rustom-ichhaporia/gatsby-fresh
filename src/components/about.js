@@ -15,7 +15,7 @@ const SubHead = styled.p`
 
 export default function About() {
   return (
-    <div>
+    <>
       <Head>Hello!</Head>
 
       <SubHead>
@@ -60,6 +60,6 @@ export default function About() {
         .
       </p>
       <br />
-    </div>
+    </>
   );
 }
