@@ -17,8 +17,7 @@ const ItemTitle = styled.h2`
   // color: var(--accent-1-color);
   #company {
     color: var(--accent-1-color);
-    float: right;
-    text-align: right;
+    // float: right;
     // a {
     //   color: var(--red);
     // }
@@ -58,16 +57,14 @@ export default function Experience() {
   `);
 
   return (
-    <div>
-      {/* <h1>EXPERIENCE</h1> */}
-
+    <>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <ExperienceItem key={node.id}>
           <ItemTitle>
             {node.frontmatter.title}
 
             <span id="company">
-              @{' '}
+              {' @ '}
               <a
                 href={node.frontmatter.url}
                 aria-label="Link to company page"
@@ -88,6 +85,6 @@ export default function Experience() {
           <br />
         </ExperienceItem>
       ))}
-    </div>
+    </>
   );
 }

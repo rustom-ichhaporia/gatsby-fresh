@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
     background: var(--background-color);
     font-family: var(--mono-font), Open-Sans, sans-serif;
     color: var(--text-color);
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5em;
 
     * {
@@ -65,10 +65,12 @@ const GlobalStyle = createGlobalStyle`
     a {
       text-decoration: none;
       :link {
-        color: var(--text-light-color);
+        // color: var(--text-light-color);
+        color: var(--accent-1-color);
       }
       :visited {
-        color: var(--text-light-color);
+        // color: var(--text-light-color);
+        color: var(--accent-1-color);
       }
       :hover {
         color: var(--background-color);

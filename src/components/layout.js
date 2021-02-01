@@ -25,7 +25,6 @@ const Separator = styled.hr`
 const Footer = styled.div`
   width: 100%;
   position: absolute;
-  // margin-top: 20px;
   bottom: 0px;
 `;
 
@@ -38,11 +37,9 @@ export default function Layout({ children, hideNavBar, hideFooter }) {
             <NavBar /> <Separator />
           </>
         )}
-        <ChildrenWrapper>
-        {children}
 
-        </ChildrenWrapper>
-  
+        <ChildrenWrapper>{children}</ChildrenWrapper>
+
         {!hideFooter && (
           <Footer>
             <Separator />
