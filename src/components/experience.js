@@ -28,7 +28,7 @@ const ItemTitle = styled.h2`
 `;
 
 const ItemDate = styled.p`
-  text-align: right;
+  // text-align: right;
 `;
 
 const ItemDescription = styled.div``;
@@ -63,16 +63,17 @@ export default function Experience() {
           <ItemTitle>
             {node.frontmatter.title}
 
+            {' @ '}
+
             <span id="company">
-              {' @ '}
               <a
                 href={node.frontmatter.url}
                 aria-label="Link to company page"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {node.frontmatter.company}{' '}
-              </a>{' '}
+                {node.frontmatter.company}
+              </a>
             </span>
           </ItemTitle>
           <ItemDate>

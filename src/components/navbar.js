@@ -4,13 +4,18 @@ import { Link } from 'gatsby';
 
 const Header = styled.header`
   width: 100%;
-  padding-top: 20px;
+  padding-top: 25px;
+  padding-bottom: 20px;
 `;
 
 const Navigation = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+`;
+
+const NavLink = styled.h2`
+  margin: 0;
 `;
 
 export default function NavBar() {
@@ -35,7 +40,9 @@ export default function NavBar() {
         {navLinks &&
           navLinks.map(({ url, name }) => (
             <Link id="links" to={url}>
-              {name}
+              <NavLink>
+                {name}
+              </NavLink>
             </Link>
           ))}
       </Navigation>

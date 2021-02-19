@@ -18,8 +18,8 @@ const GlobalStyle = createGlobalStyle`
 
     --background-color: var(--grey-1);
     --background-light-color: var(--grey-2);
-    --text-color: var(--grey-3);
-    --text-light-color: var(--grey-4);
+    --text-color: var(--grey-4);
+    --text-light-color: var(--white);
     --accent-1-color: var(--red);
     --accent-1-dark-color: var(--dark-red);
     --sans-font: Montserrat, sans-serif;
@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
     background: var(--background-color);
     font-family: var(--mono-font), Open-Sans, sans-serif;
     color: var(--text-color);
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.5em;
 
     * {

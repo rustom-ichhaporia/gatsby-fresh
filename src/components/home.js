@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import { Link, useStaticQuery, graphql } from 'gatsby';
 
 const PageStyle = styled.div`
-position: absolute;
+// position: absolute;
 // vertical-align: middle;
   font-size: 30px;
   line-height: 1.3em;
+  margin: auto;
 `;
 
 const SectionLink = styled.h1`
-// display: inline-block;
 `;
 
 export default function Home() {

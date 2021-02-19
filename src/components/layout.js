@@ -17,7 +17,7 @@ const ChildrenWrapper = styled.div`
 `;
 
 const Separator = styled.hr`
-  margin-top: 20px;
+  // margin-top: 20px;
   width: 100%;
   border: 1px solid var(--background-light-color);
 `;
