@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     --white: #ffffff;
     --cream: #f0f0f0;
     --red: #f04646;
+    --light-red: #f25050;
     --dark-red: #c72424;
     --peach: #ffa984;
     --peach-2: #ff8e5e;
@@ -20,10 +21,11 @@ const GlobalStyle = createGlobalStyle`
     --background-light-color: var(--grey-2);
     --text-color: var(--grey-4);
     --text-light-color: var(--white);
-    --accent-1-color: var(--red);
-    --accent-1-dark-color: var(--dark-red);
+    --accent-1-color: var(--peach-2);
+    --accent-1-light-color: var(--peach-2);
+    --accent-1-dark-color: var(--dark-peach);
     --sans-font: Montserrat, sans-serif;
-    --mono-font: IBM Plex Mono, monospace;
+    --mono-font: IBM Plex Sans, monospace;
   }
 
   html {
@@ -39,11 +41,11 @@ const GlobalStyle = createGlobalStyle`
     background: var(--background-color);
     font-family: var(--mono-font), Open-Sans, sans-serif;
     color: var(--text-color);
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.5em;
 
     * {
-      font-weight: 200;
+      font-weight: 300;
     }
 
     // overflow: hidden;

@@ -9,7 +9,7 @@ const ItemTitle = styled.h2`
     color: var(--accent-1-color);
     float: right;
     a {
-      color: var(--red);
+      color: var(--accent-1-color);
     }
     a:hover {
       color: var(--black);
@@ -17,9 +17,14 @@ const ItemTitle = styled.h2`
   }
   margin-bottom: 30px;
   #spaces {
-    padding-right: 48px;
+    padding-right: 41px;
   }
 `;
+
+// const ProjectGrid = styled.div`
+//   display: grid;
+//   grid-template-rows: auto 45px 45px;
+// `;
 
 export default function Projects() {
   const data = useStaticQuery(graphql`

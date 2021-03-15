@@ -1,7 +1,7 @@
 ---
 date: '2020-08-27'
-title: 'Boltzmann Particle Simulator'
-github: 'https://github.com/uiuc-fa20-cs126/ideal-gas-rustom-ichhaporia'
+title: 'Particle Dynamics Simulator'
+github: 'https://github.com/rustom-ichhaporia/particle-dynamics'
 external: ''
 tech:
   - C++
@@ -11,4 +11,4 @@ company: 'UIUC'
 showInProjects: true
 ---
 
-A JSON-customizable colorized particle simulator to demonstrate particle behavior and the Boltzmann Distribution.
+A customizable colorized particle simulator to demonstrate particle behavior and the Boltzmann Distribution.

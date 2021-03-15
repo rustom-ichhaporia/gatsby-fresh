@@ -7,4 +7,6 @@ end: '2021-05-01'
 url: 'https://researchpark.illinois.edu/tenant_directory/motorola-solutions/'
 ---
 
-- Will be using python pandas and miscellaneous data science frameworks for cybersecurity projects
+- Constructed Plotly Dash dashboard for user-facing cybersecurity analysis with hundreds of corporate clients
+- Coordinate data pipelines between companies under acquisition to maximize utility for ActiveEye security platform 
+- Create actionable anomaly detection infrastructure to protect both private and public sector systems that save lives
