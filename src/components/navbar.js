@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 
+import { mixins } from '@styles';
+
 const Header = styled.header`
   width: 100%;
   padding-top: 25px;
@@ -12,6 +14,7 @@ const Navigation = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  ${mixins.whiteLink}
 `;
 
 const NavLink = styled.h2`
@@ -22,15 +25,15 @@ export default function NavBar() {
   const navLinks = [
     {
       name: 'ABOUT',
-      url: '/about',
+      url: '/about/',
     },
     {
       name: 'EXPERIENCE',
-      url: '/experience',
+      url: '/experience/',
     },
     {
       name: 'PROJECTS',
-      url: '/projects',
+      url: '/projects/',
     },
   ];
 
@@ -40,9 +43,7 @@ export default function NavBar() {
         {navLinks &&
           navLinks.map(({ url, name }) => (
             <Link id="links" to={url}>
-              <NavLink>
-                {name}
-              </NavLink>
+              <NavLink>{name}</NavLink>
             </Link>
           ))}
       </Navigation>

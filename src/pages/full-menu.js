@@ -9,8 +9,6 @@ const Outer = styled.div`
   width: 100vw;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
 `;
 
 const Bin = styled.div`
@@ -21,9 +19,11 @@ const Bin = styled.div`
 export default function Page() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
       <Outer>
-        <Splash />
+        <GlobalStyle />
+        <Bin>
+          <Home />
+        </Bin>
         <Cursor />
       </Outer>
     </ThemeProvider>

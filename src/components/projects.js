@@ -6,13 +6,12 @@ import { IconContext } from '@meronex/icons';
 
 const ItemTitle = styled.h2`
   #company {
-    color: var(--accent-1-color);
     float: right;
     a {
-      color: var(--accent-1-color);
+      color: ${(props) => props.theme.colors.text};
     }
     a:hover {
-      color: var(--black);
+      color: ${(props) => props.theme.colors.background};
     }
   }
   margin-bottom: 30px;
@@ -20,11 +19,6 @@ const ItemTitle = styled.h2`
     padding-right: 41px;
   }
 `;
-
-// const ProjectGrid = styled.div`
-//   display: grid;
-//   grid-template-rows: auto 45px 45px;
-// `;
 
 export default function Projects() {
   const data = useStaticQuery(graphql`
@@ -61,30 +55,30 @@ export default function Projects() {
               {/* <span> {node.frontmatter.date}</span> */}
               <span id="company">
                 {node.frontmatter.github && (
-                <a
-                  href={node.frontmatter.github}
-                  aria-label="Link to GitHub repo"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{display: 'inline-block'}}
-                >
-                  <Icon name="GitHub" />
-                </a>
-              ) }
-              {' '}
-              {node.frontmatter.external ? (
-                <a
-                  href={node.frontmatter.external}
-                  aria-label="Link to project page"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{display: 'inline-block'}}
-                >
-                  <Icon name="Link" />
-                </a>
-              ) : (<span id="spaces"></span>)}
+                  <a
+                    href={node.frontmatter.github}
+                    aria-label="Link to GitHub repo"
+                    target="_blank"
+                    rel="noreferrer"
+                    style={{ display: 'inline-block' }}
+                  >
+                    <Icon name="GitHub" />
+                  </a>
+                )}{' '}
+                {node.frontmatter.external ? (
+                  <a
+                    href={node.frontmatter.external}
+                    aria-label="Link to project page"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ display: 'inline-block' }}
+                  >
+                    <Icon name="Link" />
+                  </a>
+                ) : (
+                  <span id="spaces"></span>
+                )}
               </span>
-              
             </ItemTitle>
 
             {/* <div dangerouslySetInnerHTML={{ __html: node.html }} /> */}

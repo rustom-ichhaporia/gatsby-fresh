@@ -1,30 +1,46 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Head = styled.p``;
+import { StaticImage } from 'gatsby-plugin-image';
 
-const SubHead = styled.p`
-  font-style: italic;
+const Head = styled.h1`
+  font-size: 30px;
+  line-height: 3em;
   span {
-    font-family: var(--mono-font);
-    color: var(--accent-1-color);
-    font-style: normal;
-    font-weight: 600;
+    text-align: center;
   }
+`;
+
+const IntroSection = styled.div`
+  display: flex;
+  flex-direction: row;
+  algin-items: center;
+  justify-content: space-between;
+  padding: 20px 0px;
 `;
 
 export default function About() {
   return (
     <>
-      <Head>Hello!</Head>
-
-      <SubHead>
-        <blockquote>
-          My name is<span> rustom ichhaporia</span>.
+      <IntroSection>
+        <Head>
+          Hi there, I'm Rustom Ichhaporia!
           <br />
-          Welcome to my Home on the Web.
-        </blockquote>
-      </SubHead>
+          I play with numbers and music.
+          <br />
+          Welcome to my Home on the Web!
+        </Head>
+        <StaticImage
+          src="../images/rustom_square.jpg"
+          alt="Picture of Rustom"
+          style={{
+            borderRadius: '20px',
+            maxWidth: '300px',
+            maxHeight: '300px',
+            float: 'right',
+          }}
+        />
+      </IntroSection>
 
       <p>
         I'm a CS + statistics student at the University of Illinois,
@@ -39,25 +55,27 @@ export default function About() {
 
       <p>
         I'm currently studying at the University of Illinois at
-        Urbana-Champaign, working as a Data Science Intern at{' '}
+        Urbana-Champaign, working as a Machine Learning Intern at{' '}
         <a
-          href="https://researchpark.illinois.edu/tenant_directory/motorola-solutions/"
-          aria-label="Link to Motorola Solutions"
+          href="https://twitter.com/"
+          aria-label="Twitter"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Motorola Solutions
-        </a>{', '}
-        and serving as a Course Assistant and Code Review Moderator for the course{' '}
+          Twitter
+        </a>
+        {', '}
+        and serving as a Course Assistant and Code Review Moderator for the
+        course Software Design Studio (
         <a
           href="https://courses.grainger.illinois.edu/CS126/sp2021/"
-          aria-label="Link to CS 126: Software Design Studio"
+          aria-label="CS 126: Software Design Studio"
           target="_blank"
           rel="noopener noreferrer"
         >
-          CS 126: Software Design Studio
+          CS 126
         </a>
-        .
+        ).
       </p>
       <br />
     </>

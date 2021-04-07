@@ -3,7 +3,7 @@ title: 'Social Network Analyst'
 company: 'SONIC Research Group'
 location: 'Evanston, IL'
 start: '2019-05-01'
-end: '2020-01-01'
+end: '2019-12-01'
 url: 'http://sonic.northwestern.edu/congrats-and-good-luck-rustom/'
 ---
 

@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import { IconContext } from '@meronex/icons';
 import { siteMetadata } from '../../gatsby-config';
 import Icon from '@components/icons';
+import { mixins } from '@styles';
 
 const SocialLinksStyle = styled.div`
-
+  ${mixins.whiteLink};
   width: 100%;
   height: 60px;
   // margin: auto;
-  max-width: 700px;
+  max-width: 800px;
   display: flex;
   justify-content: space-around;
   align-items: center;

@@ -1,25 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { TransitionState, TransitionLink } from 'gatsby-plugin-transition-link';
 import { Cursor, NavBar, SocialLinks } from '@components';
+import { theme } from '@styles';
 
 const Wrapper = styled.div`
   min-height: 100vh;
-  max-width: 700px;
+  max-width: ${(props) => props.theme.sizes.maxWidth};
   margin: auto;
   position: relative;
 `;
 
-const ChildrenWrapper = styled.div`
+const ChildrenWrapper = styled.main`
   position: relative;
   height: 100%;
   padding-bottom: 60px;
 `;
 
 const Separator = styled.hr`
-  // margin-top: 20px;
   width: 100%;
-  border: 1px solid var(--background-light-color);
+  border: 1px solid ${(props) => props.theme.colors.backgroundLight};
 `;
 
 const Footer = styled.div`
@@ -30,7 +30,7 @@ const Footer = styled.div`
 
 export default function Layout({ children, hideNavBar, hideFooter }) {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <Wrapper>
         {!hideNavBar && (
           <>
@@ -49,6 +49,6 @@ export default function Layout({ children, hideNavBar, hideFooter }) {
         )}
       </Wrapper>
       <Cursor />
-    </>
+    </ThemeProvider>
   );
 }

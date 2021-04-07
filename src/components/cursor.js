@@ -1,94 +1,102 @@
 import React, { useEffect, useLayoutEffect } from 'react';
 import styled from 'styled-components';
+import { theme } from '@styles';
 
-// Based on: https://codepen.io/markmead/pen/aXjerK
-// Old cursor: https://codepen.io/g-norman/pen/oqMGyj
+import { gsap } from 'gsap';
+import $ from 'jquery';
 
-const OuterRing = styled.div`
-  border: 2px solid var(--accent-1-color);
-  border-radius: 50%;
-  position: absolute;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: left 0.1s, top 0.1s, width 0.3s, height 0.3s, border-radius 0.5s;
-  height: 40px;
-  width: 40px;
-  // mix-blend-mode: difference;
-`;
-
-const InnerRing = styled.div`
-  position: absolute;
-  background: var(--white);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  border-radius: 100%;
+const CursorDiv = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 6px;
   height: 6px;
-  // mix-blend-mode: difference;
+  border-radius: 50%;
+  background-color: ${(props) => props.theme.colors.textLight};
+  // z-index: 2000;
+  user-select: none;
+  pointer-events: none;
+`;
+
+const FollowerDiv = styled.div`
+  border: 2px solid ${(props) => props.theme.colors.accent};
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  // opacity: 0.7;
+  user-select: none;
+  pointer-events: none;
 `;
 
 export default function Cursor() {
+  const accentColor = theme.colors.accent;
+
   useLayoutEffect(() => {
-    const pageLinks = document.querySelectorAll('a');
-    const outerRing = document.getElementById('outer-ring');
-    const innerDot = document.getElementById('inner-dot');
+    gsap.set('.follower', { xPercent: -50, yPercent: -50 });
+    gsap.set('.cursor', { xPercent: -50, yPercent: -50 });
+
+    var follow = document.querySelector('.follower');
+    var cur = document.querySelector('.cursor');
+    var pageLinks = document.querySelectorAll('a');
     let isOnElement = false;
 
-    const moveHighlighter = (element) => {
-      innerDot.style.left = `${element.pageX}px`;
-      innerDot.style.top = `${element.pageY}px`;
-      if (isOnElement) return false;
-      outerRing.style.left = `${element.pageX}px`;
-      outerRing.style.top = `${element.pageY}px`;
-    };
-    document.addEventListener('mousemove', moveHighlighter);
-
-    const mouseDownHighlighter = () => {
-      if (isOnElement) {
-        outerRing.style.width = `${outerRing.offsetWidth - 20}px`;
-        outerRing.style.height = `${outerRing.offsetHeight - 20}px`;
-      } else {
-        outerRing.style.width = '20px';
-        outerRing.style.height = '20px';
+    window.addEventListener('mousemove', (e) => {
+      gsap.to(cur, { x: e.clientX, y: e.clientY, ease: 'power3.out' });
+      if (!isOnElement) {
+        gsap.to(follow, {
+          x: e.clientX,
+          y: e.clientY,
+        });
       }
-    };
-    document.addEventListener('mousedown', mouseDownHighlighter);
+    });
 
-    const mouseClickHighlighter = () => {
-      outerRing.style.width = '40px';
-      outerRing.style.height = '40px';
-    };
-    document.addEventListener('mouseup', mouseClickHighlighter);
+    window.addEventListener('mousedown', (e) => {
+      if (isOnElement) {
+        gsap.to(cur, {
+          width: cur.offsetWidth - 20,
+          height: cur.offsetHeight - 20,
+        });
+      } else {
+        gsap.to(follow, { width: '20px', height: '20px' });
+      }
+    });
 
-    const highlightLink = (element) => {
-      // Fix for absolutely positioned elements
-      outerRing.style.left = `${element.getBoundingClientRect().left + element.getBoundingClientRect().width / 2}px`;
-      outerRing.style.top = `${element.getBoundingClientRect().top + window.scrollY + element.getBoundingClientRect().height / 2 + 1}px`;
+    window.addEventListener('mouseup', () => {
+      if (!isOnElement) {
+        gsap.to(follow, { width: '40px', height: '40px' });
+      }
+    });
 
-      // outerRing.style.left = `${
-      //   element.offsetLeft + element.offsetWidth / 2 - 1
-      // }px`;
-      // outerRing.style.top = `${
-      //   element.offsetTop  + element.offsetHeight / 2 - 1
-      // }px`;
-      outerRing.style.width = `${element.offsetWidth + 15}px`;
-      outerRing.style.height = `${element.offsetHeight + 15}px`;
-      outerRing.style.borderRadius = '12px';
-      outerRing.style.background = 'var(--accent-1-color)';
-      outerRing.style.zIndex = '-1';
+    $('a').mouseenter(function (e) {
+      callHelper(e, this);
+    });
+
+    function callHelper(e, parent) {
+      var boundingRect = parent.getBoundingClientRect();
       isOnElement = true;
-    };
-    pageLinks.forEach((link) =>
-      link.addEventListener('mouseenter', highlightLink.bind(null, link, false))
-    );
+      gsap.to(follow, {
+        x: boundingRect.x + boundingRect.width / 2,
+        y: boundingRect.y + boundingRect.height / 2,
+        width: boundingRect.width + 15,
+        height: boundingRect.height + 15,
+        borderRadius: '12px',
+        background: accentColor,
+        zIndex: -1,
+      });
+    }
 
     const unHighlightLink = () => {
-      outerRing.style.width = '40px';
-      outerRing.style.height = '40px';
-      outerRing.style.background = 'transparent';
-      outerRing.style.borderRadius = '50%';
-      outerRing.style.zIndex = 'auto';
       isOnElement = false;
+      gsap.to(follow, {
+        width: 40,
+        height: 40,
+        background: 'transparent',
+        borderRadius: '50%',
+        // zIndex: 'auto',
+      });
     };
     pageLinks.forEach((link) =>
       link.addEventListener('mouseleave', unHighlightLink)
@@ -97,8 +105,8 @@ export default function Cursor() {
 
   return (
     <>
-      <OuterRing id="outer-ring" />
-      <InnerRing id="inner-dot" />
+      <FollowerDiv className="follower" />
+      <CursorDiv className="cursor" />
     </>
   );
 }

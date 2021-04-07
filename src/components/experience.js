@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 
 // Graphql extraction of experience
 
@@ -14,16 +14,11 @@ const ExperienceItem = styled.div`
 `;
 
 const ItemTitle = styled.h2`
-  // color: var(--accent-1-color);
   #company {
-    color: var(--accent-1-color);
-    // float: right;
-    // a {
-    //   color: var(--red);
-    // }
-    // a:hover {
-    //   color: var(--black);
-    // }
+    color: ${(props) => props.theme.colors.accent};
+  }
+  #short-date {
+    float: right;
   }
 `;
 
@@ -45,8 +40,8 @@ export default function Experience() {
             frontmatter {
               title
               company
-              start(formatString: "MM/YYYY")
-              end(formatString: "MM/YYYY")
+              start(formatString: "YYYY")
+              end(formatString: "YYYY")
               url
             }
             html
@@ -75,14 +70,13 @@ export default function Experience() {
                 {node.frontmatter.company}
               </a>
             </span>
+            <span id="short-date">{node.frontmatter.end}</span>
           </ItemTitle>
-          <ItemDate>
+          {/* <ItemDate>
             {node.frontmatter.start} - {node.frontmatter.end}
-          </ItemDate>
+          </ItemDate> */}
 
-          {/* <ItemDescription> */}
           <div dangerouslySetInnerHTML={{ __html: node.html }} />
-          {/* </ItemDescription> */}
           <br />
         </ExperienceItem>
       ))}

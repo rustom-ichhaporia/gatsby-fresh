@@ -11,7 +11,7 @@ module.exports = {
       },
       {
         name: 'GitHub',
-        url: 'https://github.com/rustom-ichhaporia',
+        url: 'https://github.com/rustom',
       },
       {
         name: 'LinkedIn',
@@ -23,7 +23,7 @@ module.exports = {
       },
       {
         name: 'Medium',
-        url: 'https://rustom-ichhaporia.medium.com',
+        url: 'https://rustom.medium.com',
       },
       {
         name: 'Instagram',
@@ -31,7 +31,7 @@ module.exports = {
       },
       {
         name: 'Twitter',
-        url: 'https://twitter.com/cantspellrustom',
+        url: 'https://twitter.com/rustomtweets',
       },
     ],
   },
@@ -42,7 +42,9 @@ module.exports = {
         trackingId: 'UA-164610470-1',
       },
     },
+    'gatsby-plugin-image',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-transition-link',
     'styled-components',
     'babel-plugin-styled-components',
     'gatsby-plugin-sharp',

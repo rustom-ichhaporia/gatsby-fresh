@@ -7,6 +7,6 @@ end: '2021-05-01'
 url: 'https://researchpark.illinois.edu/tenant_directory/motorola-solutions/'
 ---
 
-- Constructed Plotly Dash dashboard for user-facing cybersecurity analysis with hundreds of corporate clients
-- Coordinate data pipelines between companies under acquisition to maximize utility for ActiveEye security platform 
-- Create actionable anomaly detection infrastructure to protect both private and public sector systems that save lives
+- Constructed Plotly Dash dashboard for $5 M user-facing cybersecurity analysis with hundreds of corporate clients
+- Coordinated data pipelines between companies under acquisition to maximize utility for ActiveEye security platform
+- Crafted actionable anomaly detection systems to protect both private and public sector systems that save lives
