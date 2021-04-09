@@ -25,15 +25,15 @@ export default function NavBar() {
   const navLinks = [
     {
       name: 'ABOUT',
-      url: '/about/',
+      url: '/about',
     },
     {
       name: 'EXPERIENCE',
-      url: '/experience/',
+      url: '/experience',
     },
     {
       name: 'PROJECTS',
-      url: '/projects/',
+      url: '/projects',
     },
   ];
 

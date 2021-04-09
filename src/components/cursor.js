@@ -9,17 +9,17 @@ const CursorDiv = styled.div`
   position: fixed;
   top: 0;
   left: 0;
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
   background-color: ${(props) => props.theme.colors.textLight};
-  // z-index: 2000;
+  z-index: 2000;
   user-select: none;
   pointer-events: none;
 `;
 
 const FollowerDiv = styled.div`
-  border: 2px solid ${(props) => props.theme.colors.accent};
+  border: 3px solid ${(props) => props.theme.colors.accent};
   position: fixed;
   top: 0;
   left: 0;
@@ -29,6 +29,7 @@ const FollowerDiv = styled.div`
   // opacity: 0.7;
   user-select: none;
   pointer-events: none;
+  mix-blend-mode: difference;
 `;
 
 export default function Cursor() {
@@ -54,12 +55,7 @@ export default function Cursor() {
     });
 
     window.addEventListener('mousedown', (e) => {
-      if (isOnElement) {
-        gsap.to(cur, {
-          width: cur.offsetWidth - 20,
-          height: cur.offsetHeight - 20,
-        });
-      } else {
+      if (!isOnElement) {
         gsap.to(follow, { width: '20px', height: '20px' });
       }
     });
@@ -84,7 +80,7 @@ export default function Cursor() {
         height: boundingRect.height + 15,
         borderRadius: '12px',
         background: accentColor,
-        zIndex: -1,
+        zIndex: '-1',
       });
     }
 

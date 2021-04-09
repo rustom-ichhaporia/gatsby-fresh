@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { StaticImage } from 'gatsby-plugin-image';
+import { motion } from 'framer-motion';
 
-const Head = styled.h1`
+const Head = styled(motion.h1)`
+  color: ${(props) => props.theme.colors.textLight};
   font-size: 30px;
   line-height: 3em;
   span {
@@ -11,7 +13,7 @@ const Head = styled.h1`
   }
 `;
 
-const IntroSection = styled.div`
+const IntroSection = styled(motion.div)`
   display: flex;
   flex-direction: row;
   algin-items: center;
@@ -34,7 +36,7 @@ export default function About() {
           src="../images/rustom_square.jpg"
           alt="Picture of Rustom"
           style={{
-            borderRadius: '20px',
+            borderRadius: '40px',
             maxWidth: '300px',
             maxHeight: '300px',
             float: 'right',

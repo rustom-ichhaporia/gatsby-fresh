@@ -14,6 +14,9 @@ const ExperienceItem = styled.div`
 `;
 
 const ItemTitle = styled.h2`
+  #positionTitle {
+    color: ${(props) => props.theme.colors.textLight};
+  }
   #company {
     color: ${(props) => props.theme.colors.accent};
   }
@@ -56,7 +59,7 @@ export default function Experience() {
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <ExperienceItem key={node.id}>
           <ItemTitle>
-            {node.frontmatter.title}
+            <span id="positionTitle">{node.frontmatter.title}</span>
 
             {' @ '}
 

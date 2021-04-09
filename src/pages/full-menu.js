@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 
 import { GlobalStyle } from '@styles';
 import { theme } from '@styles';
-import { Cursor, Home, Layout, Splash } from '@components';
+import { Cursor, FullMenu, Layout } from '@components';
 
 const Outer = styled.div`
   width: 100vw;
@@ -22,7 +22,7 @@ export default function Page() {
       <Outer>
         <GlobalStyle />
         <Bin>
-          <Home />
+          <FullMenu />
         </Bin>
         <Cursor />
       </Outer>

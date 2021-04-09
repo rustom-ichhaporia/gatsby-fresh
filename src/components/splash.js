@@ -1,10 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
 
 import { navigate } from 'gatsby';
 
-import TransitionLink from 'gatsby-plugin-transition-link';
+import { useTriggerTransition } from 'gatsby-plugin-transition-link';
 import Lottie from 'lottie-react';
+import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 
 import animation from '@images/data.json';
 
@@ -20,33 +21,49 @@ export default function Splash() {
   const [isToggled, toggle] = useState(0);
   const [used, toggleUsed] = useState(0);
 
-  function toHome() {
-    navigate();
-  }
-
   const lottieRef = useRef();
 
+  // const trans = useTriggerTransition({
+  //   to: '/full-menu',
+  // });
+
+  // const something = navigate('/about');
+
+  const triggerTransition = () => {
+    // {
+    //   isToggled && navigate('/about');
+    // }
+    lottieRef.current.setDirection(-1);
+    lottieRef.current.play();
+    toggle(!isToggled);
+  };
+
   return (
-    <Lottie
-      lottieRef={lottieRef}
-      animationData={animation}
-      loop={false}
-      onComplete={() => {
-        if (isToggled) {
-          navigate('/about/');
-        }
-      }}
-      onClick={() => {
-        lottieRef.current.setDirection(-1);
-        lottieRef.current.play();
-        toggle(!isToggled);
-      }}
-    />
+    <motion.div
+      initial={{}}
+      animate={{ transition: { staggerChildren: 0.125 } }}
+      exit={{ opacity: 0.2 }}
+    >
+      <Lottie
+        lottieRef={lottieRef}
+        animationData={animation}
+        loop={false}
+        onEnterFrame={() => {
+          lottieRef.current.setSpeed(3);
+        }}
+        onComplete={() => {
+          isToggled && navigate('/full-menu');
+          lottieRef.current.setDirection(-1);
+          lottieRef.current.play();
+          toggle(!isToggled);
+        }}
+
+        // onClick={() => {
+        //   lottieRef.current.setDirection(-1);
+        //   lottieRef.current.play();
+        //   toggle(!isToggled);
+        // }}
+      />
+    </motion.div>
   );
 }
-
-// if (used) {
-//   navigate('/about');
-// } else {
-//   toggleUsed(!used);
-//   toggle(!isToggled); }

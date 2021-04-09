@@ -1,7 +1,7 @@
 export { default as About } from './about';
 export { default as Cursor } from './cursor';
 export { default as Experience } from './experience';
-export { default as Home } from './home';
+export { default as FullMenu } from './full-menu';
 export { default as Icons } from './icons';
 export { default as Layout } from './layout';
 export { default as NavBar } from './navbar';
